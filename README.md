@@ -1,14 +1,8 @@
 # 💎 Dahayu JewelryThis is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-
-
 **Keindahan Abadi dalam Kilau Alam**## Getting Started
 
-
-
 Website e-commerce premium untuk Dahayu Jewelry - merek perhiasan emas yang terinspirasi oleh keindahan alam dan budaya Bali.First, run the development server:
-
-
 
 ![Next.js](https://img.shields.io/badge/Next.js-16.0-black)```bash
 
@@ -36,11 +30,7 @@ Website e-commerce premium untuk Dahayu Jewelry - merek perhiasan emas yang teri
 
 - 🌊 **Smooth Scrolling** - Navigasi yang mulus dan nyamanYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-
-
 ## 🎨 DesainThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-
 
 ### Palet Warna## Learn More
 
@@ -54,19 +44,13 @@ Website e-commerce premium untuk Dahayu Jewelry - merek perhiasan emas yang teri
 
 - **Coklat**: `#8C715A` - Aksen alami- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-
-
 ### TipografiYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 - **Heading**: Playfair Display - Serif elegan untuk judul
 
 - **Body**: Poppins - Sans-serif modern untuk konten## Deploy on Vercel
 
-
-
 ## 🚀 TeknologiThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-
 
 - **Framework**: Next.js 16 (App Router)Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
@@ -111,34 +95,40 @@ dahayu/
 ## 🎯 Halaman & Sections
 
 ### 1. Navbar
+
 - Transparent pada hero, solid saat scroll
 - Responsive mobile menu
 - Smooth scroll navigation
 
 ### 2. Hero Section
+
 - Full-screen landing dengan animasi gradient
 - Slogan utama: "Keindahan Abadi dalam Kilau Alam"
 - Dua CTA buttons: "Lihat Koleksi" dan "Tentang Kami"
 - Animated floating elements
 
 ### 3. Featured Collection
+
 - Grid responsif dengan 6 produk unggulan
 - Hover effects dengan zoom dan golden border
 - Quick view functionality
 - Kategori: Kalung, Anting, Gelang, Cincin
 
 ### 4. About Section
+
 - Two-column layout (image + content)
 - Brand philosophy dan cerita
 - Value propositions dengan icons
 - Floating testimonial card
 
 ### 5. Testimonials
+
 - 3 customer testimonials dengan ratings
 - Decorative golden frames
 - Trust indicators (500+ pelanggan, 15+ tahun, dll)
 
 ### 6. Footer
+
 - Informasi kontak lengkap
 - Quick links dan navigasi koleksi
 - Social media links (Instagram, WhatsApp, Email)
@@ -189,10 +179,10 @@ Edit `app/components/FeaturedCollection.tsx`:
 const products = [
   {
     id: 1,
-    name: 'Nama Produk',
-    price: 'Rp X.XXX.XXX',
-    category: 'Kategori',
-    image: 'URL_gambar',
+    name: "Nama Produk",
+    price: "Rp X.XXX.XXX",
+    category: "Kategori",
+    image: "URL_gambar",
   },
   // Tambah produk baru di sini
 ];

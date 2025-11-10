@@ -1,10 +1,82 @@
 ﻿@import "tailwindcss";
 
+@theme {
+  --color-gold: #c6a664;
+  --color-gold-light: #e3c16f;
+  --color-gold-dark: #9b7e4f;
+  --color-green-dark: #1b3a2f;
+  --color-cream: #faf6f0;
+  --color-dark: #0a0a0a;
+  --color-dark-lighter: #1a1a1a;
+}
+
 * {
   scroll-behavior: smooth;
 }
 
 body {
   overflow-x: hidden;
+  background: #0a0a0a;
+  color: #faf6f0;
 }
-@import 'tailwindcss';
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.03;
+  z-index: 100;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #e3c16f 0%, #c6a664 50%, #8c715a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.liquid-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite;
+}

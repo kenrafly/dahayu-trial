@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Eye } from "lucide-react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { Eye, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 
 const products = [
@@ -11,7 +11,8 @@ const products = [
     price: "Rp 8.500.000",
     category: "Kalung",
     image:
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&q=80",
+      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80",
+    description: "Keindahan dewi dalam setiap detail",
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const products = [
     price: "Rp 3.200.000",
     category: "Anting",
     image:
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80",
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
+    description: "Elegan seperti bunga melati",
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ const products = [
     price: "Rp 5.800.000",
     category: "Gelang",
     image:
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80",
+      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80",
+    description: "Pesona frangipani Bali",
   },
   {
     id: 4,
@@ -35,7 +38,8 @@ const products = [
     price: "Rp 4.500.000",
     category: "Cincin",
     image:
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=80",
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80",
+    description: "Cahaya matahari dalam emas",
   },
   {
     id: 5,
@@ -43,7 +47,8 @@ const products = [
     price: "Rp 9.200.000",
     category: "Kalung",
     image:
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&q=80",
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
+    description: "Spiritual dan menawan",
   },
   {
     id: 6,
@@ -51,134 +56,242 @@ const products = [
     price: "Rp 3.800.000",
     category: "Anting",
     image:
-      "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=500&q=80",
+      "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=800&q=80",
+    description: "Permata yang berkilau abadi",
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
+function ProductCard({
+  product,
+  index,
+}: {
+  product: (typeof products)[0];
+  index: number;
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+  const mouseXValue = useMotionValue(0);
+  const mouseYValue = useMotionValue(0);
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
+  const rotateX = useSpring(useTransform(mouseYValue, [-0.5, 0.5], [15, -15]));
+  const rotateY = useSpring(useTransform(mouseXValue, [-0.5, 0.5], [-15, 15]));
 
-export default function FeaturedCollection() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    mouseXValue.set(xPct);
+    mouseYValue.set(yPct);
+  }
+
+  function handleMouseLeave() {
+    mouseXValue.set(0);
+    mouseYValue.set(0);
+    setIsHovered(false);
+  }
 
   return (
-    <section id="koleksi" className="py-20 px-4 md:px-8 lg:px-16 bg-cream">
-      <div className="max-w-7xl mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
+        ease: [0.21, 0.45, 0.27, 0.9],
+      }}
+      className="group perspective-container"
+    >
+      <motion.div
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: "preserve-3d",
+        }}
+        className="relative bg-dark-lighter rounded-3xl overflow-hidden border border-gold/10 hover:border-gold/30 transition-all duration-500"
+      >
+        {/* Image Container */}
+        <div className="relative h-[400px] overflow-hidden">
+          <motion.img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover"
+            animate={{
+              scale: isHovered ? 1.1 : 1,
+            }}
+            transition={{ duration: 0.6, ease: [0.21, 0.45, 0.27, 0.9] }}
+          />
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-60" />
+
+          {/* Floating number */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            className="absolute top-6 right-6 w-16 h-16 rounded-full glass-effect flex items-center justify-center"
+          >
+            <span className="text-gold text-2xl font-serif font-bold">
+              {index + 1}
+            </span>
+          </motion.div>
+
+          {/* Hover Overlay */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0 bg-gradient-to-br from-gold/20 via-transparent to-gold-dark/20 backdrop-blur-sm flex items-center justify-center gap-4"
+          >
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-14 h-14 rounded-full glass-effect flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all duration-300"
+            >
+              <Eye size={20} />
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-14 h-14 rounded-full glass-effect flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all duration-300"
+            >
+              <ShoppingBag size={20} />
+            </motion.button>
+          </motion.div>
+
+          {/* Category Badge */}
+          <div className="absolute top-6 left-6">
+            <div className="px-4 py-2 glass-effect rounded-full">
+              <span className="text-gold text-xs font-medium tracking-wider uppercase">
+                {product.category}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-8">
+          <motion.div
+            animate={{
+              y: isHovered ? -5 : 0,
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-cream mb-2 group-hover:text-gold transition-colors duration-300">
+              {product.name}
+            </h3>
+            <p className="text-cream/50 text-sm mb-4 font-sans">
+              {product.description}
+            </p>
+            <div className="flex items-center justify-between">
+              <span className="text-gold-light text-xl font-semibold">
+                {product.price}
+              </span>
+              <motion.div
+                className="w-8 h-8"
+                animate={{ rotate: isHovered ? 45 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="w-full h-full border-2 border-gold/30 group-hover:border-gold transform rotate-45" />
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Decorative corner elements */}
+        <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-gold/20 group-hover:border-gold/50 transition-colors duration-500" />
+        <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-gold/20 group-hover:border-gold/50 transition-colors duration-500" />
+      </motion.div>
+    </motion.div>
+  );
+}
+
+export default function FeaturedCollection() {
+  return (
+    <section
+      id="koleksi"
+      className="relative py-32 px-4 md:px-8 lg:px-16 bg-dark overflow-hidden"
+    >
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-gold-light/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-gold-light text-sm md:text-base font-light tracking-widest mb-4 font-sans uppercase">
-            Koleksi Unggulan
-          </h2>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-green-dark mb-6">
-            Karya Seni Emas Kami
+          {/* Decorative line */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="w-20 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="w-2 h-2 bg-gold transform rotate-45"
+            />
+            <div className="w-20 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
+          </div>
+
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-gold text-sm md:text-base font-light tracking-[0.3em] mb-6 font-sans uppercase"
+          >
+            Koleksi Eksklusif
+          </motion.h2>
+
+          <h3 className="text-5xl md:text-7xl font-serif font-bold mb-8">
+            <span className="block text-gradient">Karya Seni</span>
+            <span className="block text-cream mt-2">Emas Kami</span>
           </h3>
-          <p className="text-brown text-lg max-w-2xl mx-auto font-sans">
-            Setiap perhiasan dirancang dengan teliti, menggabungkan keindahan
-            alam dengan kemewahan emas murni
+
+          <p className="text-cream/60 text-lg max-w-2xl mx-auto font-sans leading-relaxed">
+            Setiap perhiasan dirancang dengan teliti, menggabungkan
+            <br className="hidden md:block" />
+            keindahan alam dengan{" "}
+            <span className="text-gold">kemewahan emas murni</span>
           </p>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {products.map((product) => (
-            <motion.div
-              key={product.id}
-              variants={itemVariants}
-              onMouseEnter={() => setHoveredId(product.id)}
-              onMouseLeave={() => setHoveredId(null)}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-            >
-              <div className="relative h-80 overflow-hidden shimmer">
-                <motion.img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                  animate={{
-                    scale: hoveredId === product.id ? 1.1 : 1,
-                  }}
-                  transition={{ duration: 0.6 }}
-                />
-
-                {/* Overlay with golden border effect */}
-                <div
-                  className={`absolute inset-0 border-4 transition-all duration-500 ${
-                    hoveredId === product.id
-                      ? "border-gold shadow-[inset_0_0_40px_rgba(198,166,100,0.3)]"
-                      : "border-transparent"
-                  }`}
-                />
-
-                {/* Quick view button */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: hoveredId === product.id ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 flex items-center justify-center bg-green-dark/50 backdrop-blur-sm"
-                >
-                  <button className="px-6 py-3 bg-gold text-green-dark font-semibold rounded-full hover:bg-gold-light transition-colors duration-300 flex items-center gap-2">
-                    <Eye className="w-5 h-5" />
-                    Lihat Detail
-                  </button>
-                </motion.div>
-              </div>
-
-              <div className="p-6">
-                <p className="text-gold text-sm font-medium mb-2 font-sans tracking-wider">
-                  {product.category}
-                </p>
-                <h4 className="text-2xl font-serif font-semibold text-green-dark mb-3">
-                  {product.name}
-                </h4>
-                <p className="text-brown text-lg font-semibold">
-                  {product.price}
-                </p>
-              </div>
-            </motion.div>
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          {products.map((product, index) => (
+            <ProductCard key={product.id} product={product} index={index} />
           ))}
-        </motion.div>
+        </div>
 
+        {/* View All CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mt-20"
         >
           <a
             href="#"
-            className="inline-block px-10 py-4 bg-green-dark text-gold font-semibold rounded-full hover:bg-green-dark/90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="group inline-flex items-center gap-4 px-12 py-6 bg-transparent border-2 border-gold/30 text-gold font-semibold rounded-full hover:bg-gold hover:text-dark hover:border-gold transition-all duration-500 transform hover:scale-105"
           >
-            Lihat Semua Koleksi
+            <span className="tracking-wider">Lihat Semua Koleksi</span>
+            <motion.div
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-6 h-6 border-2 border-current transform rotate-45"
+            />
           </a>
         </motion.div>
       </div>

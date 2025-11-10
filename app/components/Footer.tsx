@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Instagram, MessageCircle, Mail, MapPin, Phone } from "lucide-react";
+import {
+  Instagram,
+  MessageCircle,
+  Mail,
+  MapPin,
+  Phone,
+  ArrowUpRight,
+} from "lucide-react";
 
 export default function Footer() {
   const socialLinks = [
@@ -32,39 +39,86 @@ export default function Footer() {
     { name: "Kontak", href: "#kontak" },
   ];
 
+  const collections = [
+    { name: "Kalung", href: "#" },
+    { name: "Anting", href: "#" },
+    { name: "Gelang", href: "#" },
+    { name: "Cincin", href: "#" },
+  ];
+
   return (
-    <footer className="bg-green-dark text-cream relative overflow-hidden">
-      {/* Decorative background elements */}
+    <footer className="relative bg-dark text-cream overflow-hidden border-t border-gold/10">
+      {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 right-10 w-64 h-64 border border-gold rounded-full" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 border border-gold rounded-full" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-light/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+          {/* Brand Section - Takes more space */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="lg:col-span-5"
           >
-            <h3 className="text-3xl font-serif font-bold text-gold mb-4">
-              Dahayu Jewelry
-            </h3>
-            <p className="text-cream/80 leading-relaxed font-sans mb-6">
+            <div className="flex items-center gap-3 mb-6">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="w-2 h-2 bg-gold transform rotate-45"
+              />
+              <h3 className="text-4xl font-serif font-bold text-gold">
+                Dahayu Jewelry
+              </h3>
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="w-2 h-2 bg-gold transform rotate-45"
+              />
+            </div>
+
+            <p className="text-cream/70 leading-relaxed font-sans mb-8 max-w-md">
               Perhiasan emas premium yang menggabungkan keindahan alam Bali
-              dengan keahlian pengrajin tradisional.
+              dengan keahlian pengrajin tradisional sejak 2010.
             </p>
-            <div className="flex items-start gap-2 text-cream/80">
+
+            {/* Address */}
+            <div className="flex items-start gap-3 text-cream/60 mb-6">
               <MapPin className="w-5 h-5 text-gold mt-1 shrink-0" />
-              <p className="font-sans">
-                Jl. Raya Ubud No. 123
-                <br />
-                Gianyar, Bali 80571
-                <br />
-                Indonesia
-              </p>
+              <div className="font-sans text-sm">
+                <p>Jl. Raya Ubud No. 123</p>
+                <p>Gianyar, Bali 80571</p>
+                <p>Indonesia</p>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <a
+              href="tel:+6281234567890"
+              className="flex items-center gap-3 text-cream/60 hover:text-gold transition-colors duration-300 mb-8"
+            >
+              <Phone className="w-5 h-5" />
+              <span className="font-sans text-sm">+62 812-3456-7890</span>
+            </a>
+
+            {/* Social Links */}
+            <div className="flex gap-4">
+              {socialLinks.map((social) => (
+                <motion.a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="w-12 h-12 rounded-full glass-effect flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all duration-300"
+                >
+                  <social.icon className="w-5 h-5" />
+                </motion.a>
+              ))}
             </div>
           </motion.div>
 
@@ -74,6 +128,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-3"
           >
             <h4 className="text-xl font-serif font-semibold text-gold mb-6">
               Navigasi
@@ -83,9 +138,11 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-cream/80 hover:text-gold transition-colors duration-300 font-sans inline-block hover:translate-x-2 transform"
+                    className="group flex items-center gap-2 text-cream/70 hover:text-gold transition-all duration-300 font-sans text-sm"
                   >
-                    {link.name}
+                    <span className="w-0 group-hover:w-6 h-px bg-gold transition-all duration-300" />
+                    <span>{link.name}</span>
+                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </a>
                 </li>
               ))}
@@ -98,100 +155,101 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-2"
           >
             <h4 className="text-xl font-serif font-semibold text-gold mb-6">
               Koleksi
             </h4>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-cream/80 hover:text-gold transition-colors duration-300 font-sans inline-block hover:translate-x-2 transform"
-                >
-                  Kalung
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-cream/80 hover:text-gold transition-colors duration-300 font-sans inline-block hover:translate-x-2 transform"
-                >
-                  Anting
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-cream/80 hover:text-gold transition-colors duration-300 font-sans inline-block hover:translate-x-2 transform"
-                >
-                  Gelang
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-cream/80 hover:text-gold transition-colors duration-300 font-sans inline-block hover:translate-x-2 transform"
-                >
-                  Cincin
-                </a>
-              </li>
+              {collections.map((collection) => (
+                <li key={collection.name}>
+                  <a
+                    href={collection.href}
+                    className="group flex items-center gap-2 text-cream/70 hover:text-gold transition-all duration-300 font-sans text-sm"
+                  >
+                    <span className="w-0 group-hover:w-6 h-px bg-gold transition-all duration-300" />
+                    <span>{collection.name}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
-          {/* Contact */}
+          {/* Newsletter - Optional */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
+            className="lg:col-span-2"
           >
             <h4 className="text-xl font-serif font-semibold text-gold mb-6">
-              Hubungi Kami
+              Newsletter
             </h4>
-            <div className="space-y-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-cream/80 hover:text-gold transition-all duration-300 group"
-                >
-                  <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold group-hover:shadow-lg group-hover:shadow-gold/50 transition-all duration-300">
-                    <social.icon className="w-5 h-5 group-hover:text-green-dark transition-colors duration-300" />
-                  </div>
-                  <span className="font-sans text-sm">{social.handle}</span>
-                </a>
-              ))}
-              <a
-                href="tel:+6281234567890"
-                className="flex items-center gap-3 text-cream/80 hover:text-gold transition-all duration-300 group"
-              >
-                <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold group-hover:shadow-lg group-hover:shadow-gold/50 transition-all duration-300">
-                  <Phone className="w-5 h-5 group-hover:text-green-dark transition-colors duration-300" />
-                </div>
-                <span className="font-sans text-sm">+62 812-3456-7890</span>
-              </a>
+            <p className="text-cream/60 text-sm font-sans mb-4">
+              Dapatkan update koleksi terbaru
+            </p>
+            <div className="space-y-3">
+              <input
+                type="email"
+                placeholder="Email Anda"
+                className="w-full px-4 py-3 bg-dark-lighter border border-gold/20 rounded-xl text-cream placeholder:text-cream/40 focus:outline-none focus:border-gold transition-colors duration-300"
+              />
+              <button className="w-full px-4 py-3 bg-gold text-dark font-semibold rounded-xl hover:bg-gold-light transition-all duration-300">
+                Subscribe
+              </button>
             </div>
           </motion.div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Decorative Divider */}
+        <div className="relative mb-12">
+          <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-gold rotate-45"
+          />
+        </div>
+
+        {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="pt-8 border-t border-cream/20 text-center"
+          className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm"
         >
-          <p className="text-cream/60 font-sans text-sm">
-            © {new Date().getFullYear()} Dahayu Jewelry. Seluruh hak cipta
-            dilindungi.
+          <p className="text-cream/50 font-sans">
+            © {new Date().getFullYear()} Dahayu Jewelry. All rights reserved.
           </p>
-          <p className="text-cream/40 font-sans text-xs mt-2">
-            Dibuat dengan ❤️ untuk keindahan abadi
-          </p>
+          <div className="flex items-center gap-6">
+            <a
+              href="#"
+              className="text-cream/50 hover:text-gold transition-colors duration-300 font-sans"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#"
+              className="text-cream/50 hover:text-gold transition-colors duration-300 font-sans"
+            >
+              Terms of Service
+            </a>
+          </div>
         </motion.div>
+
+        {/* Made with love */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-center text-cream/30 text-xs mt-8 font-sans"
+        >
+          Dibuat dengan <span className="text-gold">❤</span> untuk keindahan
+          abadi
+        </motion.p>
       </div>
     </footer>
   );
