@@ -161,33 +161,30 @@ export default function About() {
             </div>
 
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-8 leading-[1.1]">
-              <span className="block text-gradient">Warisan Alam,</span>
-              <span className="block text-cream mt-2">Kemewahan</span>
-              <span className="block text-gradient mt-2">Abadi</span>
+              <span className="block text-gradient">Jewelry with a Soul.</span>
+              <span className="block text-cream mt-2">Where Desire Meets</span>
+              <span className="block text-gradient mt-2">Creation</span>
             </h2>
 
             <div className="space-y-6 text-cream/70 text-lg leading-relaxed font-sans mb-12">
               <p>
-                Dahayu Jewelry didirikan oleh tiga ibu rumah tangga luar
-                biasa—Ibu Wayan, Ibu Made, dan Ibu Ketut—yang memulai dari ruang
-                tamu kecil di Seminyak tahun 1998. Dengan modal kepercayaan dan
-                keahlian warisan keluarga, kami bertekad menghadirkan keindahan
-                perhiasan emas Bali yang otentik.
+                Dahayu lahir dari keyakinan bahwa setiap perempuan memiliki
+                energi yang tak tergantikan kekuatan lembut yang tumbuh dari
+                keinginan untuk mengenal dan mencintai diri sendiri. Melalui
+                perhiasan, kami merayakan perjalanan itu.
               </p>
               <p>
-                Sebagai ibu, kami memahami bahwa perhiasan bukan sekadar
-                aksesori, tetapi simbol{" "}
+                Setiap karya Dahayu bukan sekadar hiasan, melainkan{" "}
                 <span className="text-gold-light">
-                  kenangan, warisan, dan cinta yang abadi
-                </span>
-                . Setiap karya dibuat dengan kesabaran dan kelembutan yang sama
-                seperti kami merawat keluarga—penuh cinta dan perhatian detail.
+                  penanda momen ketika perempuan berani kembali pada dirinya
+                </span>{" "}
+                pada keindahan yang alami, tenang, dan penuh makna.
               </p>
               <p>
-                Dari satu perhiasan per minggu, kini kami melayani ribuan
-                pelanggan di seluruh dunia, tetap memegang teguh prinsip
-                kejujuran, kualitas premium, dan warisan untuk generasi
-                mendatang.
+                Dibentuk oleh tangan pengrajin yang mengerti bahasa detail,
+                Dahayu menghadirkan karya yang menyatukan keinginan, keindahan,
+                dan makna kehidupan. Sebuah pertemuan antara seni, energi, dan
+                keindahan batin perempuan modern.
               </p>
             </div>
 

@@ -173,9 +173,8 @@ export default function Hero() {
 
           {/* Main title with gradient */}
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold mb-6 leading-[0.9]">
-            <span className="block text-gradient">Keindahan</span>
-            <span className="block text-cream mt-4">Abadi dalam</span>
-            <span className="block text-gradient mt-4">Kilau Alam</span>
+            <span className="block text-gradient">Desire Meets</span>
+            <span className="block text-cream mt-4">Creation</span>
           </h1>
 
           {/* Decorative diamond shape */}
@@ -185,15 +184,21 @@ export default function Hero() {
             className="inline-block w-3 h-3 bg-gold transform rotate-45 mx-auto my-6"
           />
 
-          <p className="text-cream/60 text-lg md:text-xl font-light max-w-2xl mx-auto font-sans leading-relaxed">
-            Perhiasan emas premium yang menggabungkan
+          <p className="text-cream/60 text-lg md:text-xl font-light max-w-3xl mx-auto font-sans leading-relaxed">
+            Dahayu menghadirkan karya seni yang lahir dari keinginan dan
+            keindahan alam.
             <br className="hidden md:block" />
+            Setiap perhiasan dibuat dari{" "}
             <span className="text-gold-light">
-              keindahan alam tropis Bali
-            </span>{" "}
-            dengan
+              perak 925 berlapis emas 18 karat
+            </span>
+            ,
             <br className="hidden md:block" />
-            keahlian pengrajin tradisional
+            diciptakan dengan energi positif dan sentuhan penuh makna
+            <br className="hidden md:block" />
+            karena keanggunan sejati bukan hanya tentang kilau,
+            <br className="hidden md:block" />
+            tetapi tentang jiwa yang hidup di balik setiap ciptaan.
           </p>
         </motion.div>
 

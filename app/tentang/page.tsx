@@ -3,15 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import {
-  Leaf,
-  Heart,
-  Award,
-  Sparkles,
-  Users,
-  Shield,
-  Clock,
-} from "lucide-react";
+import { Leaf, Heart, Award, Sparkles, Users, Shield } from "lucide-react";
 
 export default function TentangPage() {
   const { scrollY } = useScroll();
@@ -212,8 +204,8 @@ export default function TentangPage() {
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">
               Filosofi Dahayu
             </h2>
-            <p className="text-cream/70 text-lg max-w-3xl mx-auto">
-              Tiga prinsip yang menjadi landasan setiap karya kami
+            <p className="text-cream/70 text-lg max-w-3xl mx-auto leading-relaxed">
+              Tiga napas yang menjiwai setiap karya kami.
             </p>
           </motion.div>
 
@@ -237,14 +229,15 @@ export default function TentangPage() {
                   </span>
                 </motion.div>
                 <h3 className="text-2xl font-serif font-bold text-cream mb-4 text-center">
-                  Kejujuran adalah Mahkota
+                  Keindahan yang Berasal dari Ketulusan
                 </h3>
                 <p className="text-cream/70 leading-relaxed text-center">
-                  Setiap gram emas yang kami gunakan adalah murni dan
-                  tersertifikasi. Kami percaya bahwa kepercayaan pelanggan
-                  adalah harta paling berharga, lebih dari emas itu sendiri.
-                  Transparansi penuh tentang kualitas, harga, dan proses
-                  pembuatan adalah komitmen kami kepada Anda.
+                  Setiap karya Dahayu dimulai dari niat yang jujur niat untuk
+                  menghadirkan makna, bukan sekadar kemewahan. Bagi kami,
+                  keindahan sejati lahir dari ketulusan: dari proses yang sabar,
+                  bahan yang terpilih dengan hati, dan dari tangan pengrajin
+                  yang bekerja dalam keheningan, menyalurkan cinta ke setiap
+                  detail.
                 </p>
               </div>
             </motion.div>
@@ -268,14 +261,15 @@ export default function TentangPage() {
                   </span>
                 </motion.div>
                 <h3 className="text-2xl font-serif font-bold text-cream mb-4 text-center">
-                  Kasih Sayang dalam Setiap Detil
+                  Cinta yang Menghidupkan Karya
                 </h3>
                 <p className="text-cream/70 leading-relaxed text-center">
-                  Sebagai ibu, kami tahu pentingnya perhatian terhadap detail.
-                  Setiap perhiasan dibuat dengan kesabaran dan kelembutan yang
-                  sama seperti kami merawat keluarga. Tidak ada yang
-                  terburu-buru, tidak ada yang diabaikan. Setiap lengkungan,
-                  setiap kilau, dikerjakan dengan penuh cinta.
+                  Kami percaya bahwa setiap perhiasan memiliki energi. Saat
+                  dibuat dengan kasih, ia memancarkan kekuatan lembut yang dapat
+                  dirasakan pemakainya. Cinta itu mengalir dalam setiap lekuk
+                  desain dari inspirasi alam, filosofi kehidupan, hingga makna
+                  yang mengingatkan perempuan untuk kembali pada dirinya
+                  sendiri: anggun, kuat, dan penuh cahaya.
                 </p>
               </div>
             </motion.div>
@@ -299,14 +293,15 @@ export default function TentangPage() {
                   </span>
                 </motion.div>
                 <h3 className="text-2xl font-serif font-bold text-cream mb-4 text-center">
-                  Warisan untuk Generasi
+                  Warisan Makna, Bukan Sekadar Benda
                 </h3>
                 <p className="text-cream/70 leading-relaxed text-center">
-                  Kami tidak hanya membuat perhiasan untuk hari ini, tetapi
-                  untuk masa depan. Setiap karya dirancang untuk menjadi warisan
-                  keluarga yang dapat diturunkan dari generasi ke generasi.
-                  Kualitas yang abadi, desain yang timeless—itulah janji kami
-                  untuk Anda dan keluarga Anda.
+                  Dahayu tidak menciptakan perhiasan untuk masa kini saja,
+                  tetapi untuk diwariskan bukan hanya sebagai benda, melainkan
+                  sebagai cerita. Cerita tentang cinta, perjuangan, dan
+                  perjalanan diri seorang perempuan. Karena kami percaya, setiap
+                  karya Dahayu membawa doa dan makna yang akan tetap hidup dari
+                  satu generasi ke generasi berikutnya.
                 </p>
               </div>
             </motion.div>
@@ -370,10 +365,10 @@ export default function TentangPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">
-              Nilai-Nilai Kami
+              ✦ Nilai-Nilai Kami
             </h2>
-            <p className="text-cream/70 text-lg max-w-2xl mx-auto">
-              Prinsip yang menjadi fondasi setiap karya kami
+            <p className="text-cream/70 text-lg max-w-3xl mx-auto leading-relaxed">
+              Empat prinsip yang menuntun setiap ciptaan Dahayu.
             </p>
           </motion.div>
 
@@ -381,27 +376,27 @@ export default function TentangPage() {
             {[
               {
                 icon: Leaf,
-                title: "Keaslian",
+                title: "🌿 Keaslian yang Bernilai",
                 description:
-                  "100% emas murni dengan sertifikat keaslian yang terjamin",
+                  "Kami hanya menggunakan bahan berkualitas tinggi dan proses yang transparan. Namun bagi kami, keaslian sejati bukan sekadar sertifikat, melainkan ketulusan dalam menciptakan karya yang lahir dari hati.",
               },
               {
                 icon: Heart,
-                title: "Keahlian",
+                title: "💛 Keahlian dengan Jiwa",
                 description:
-                  "Dikerjakan oleh pengrajin master dengan pengalaman puluhan tahun",
+                  "Setiap perhiasan dikerjakan oleh pengrajin berpengalaman, dengan ketenangan dan presisi yang diwariskan dari generasi ke generasi. Bagi mereka, mencipta adalah bentuk meditasi sebuah seni yang dijalani dengan rasa.",
               },
               {
                 icon: Award,
-                title: "Kualitas Premium",
+                title: "✨ Kualitas yang Dirasakan",
                 description:
-                  "Standar kualitas tertinggi dalam setiap detail produk",
+                  "Kami menjaga standar tertinggi di setiap detail, dari desain hingga hasil akhir yang nyaman dan anggun dikenakan. Bagi Dahayu, kualitas bukan hanya tentang tampilan, tetapi tentang perasaan yang ditinggalkan saat seseorang mengenakannya.",
               },
               {
                 icon: Sparkles,
-                title: "Desain Eksklusif",
+                title: "🌸 Desain yang Bermakna",
                 description:
-                  "Karya seni yang unik dan tidak akan Anda temukan di tempat lain",
+                  "Setiap desain Dahayu terinspirasi dari keindahan alam dan filosofi kehidupan. Unik, berkarakter, dan penuh cerita diciptakan untuk mengingatkan setiap perempuan bahwa keindahan sejati selalu tumbuh dari dalam diri.",
               },
             ].map((value, index) => (
               <motion.div
@@ -443,8 +438,8 @@ export default function TentangPage() {
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">
               Proses Pembuatan
             </h2>
-            <p className="text-cream/70 text-lg max-w-2xl mx-auto">
-              Dari konsep hingga menjadi karya seni yang sempurna
+            <p className="text-cream/70 text-lg max-w-3xl mx-auto leading-relaxed">
+              Dari niat dan tangan, lahirlah karya yang bermakna.
             </p>
           </motion.div>
 
@@ -454,23 +449,23 @@ export default function TentangPage() {
                 step: "01",
                 title: "Desain & Konsep",
                 description:
-                  "Setiap perhiasan dimulai dengan sketsa detail dan pemilihan bahan berkualitas premium",
+                  "Setiap perhiasan Dahayu berawal dari intuisi dan filosofi. Kami menggambar setiap lekuk dengan penuh kesadaran, terinspirasi oleh bentuk-bentuk alam yang melambangkan kekuatan dan kelembutan. Bukan sekadar desain, tetapi ungkapan rasa dan keindahan yang hidup dalam setiap detail.",
                 image:
                   "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&q=80&auto=format&fit=crop",
               },
               {
                 step: "02",
-                title: "Pengerjaan Master",
+                title: "Pengerjaan oleh Pengrajin Ahli",
                 description:
-                  "Pengrajin ahli mengolah emas dengan teknik tradisional yang telah teruji berabad-abad",
+                  "Dari sketsa menjadi wujud nyata, setiap detail dibentuk oleh tangan pengrajin berpengalaman. Mereka bekerja dengan ketenangan dan presisi, memadukan teknik tradisional dan sentuhan modern. Dalam setiap pukulan kecil, tersimpan rasa hormat terhadap alam dan nilai luhur warisan budaya.",
                 image:
                   "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80&auto=format&fit=crop",
               },
               {
                 step: "03",
-                title: "Finishing & QC",
+                title: "Penyempurnaan Akhir",
                 description:
-                  "Pemolesan akhir dan quality control ketat untuk hasil yang sempurna",
+                  "Tahap terakhir adalah perwujudan dari ketelitian dan cinta terhadap hasil terbaik. Setiap karya melalui proses finishing dan quality control yang cermat, hingga tercipta perhiasan yang halus, nyaman dikenakan, dan memancarkan keanggunan alami dari setiap sisi.",
                 image:
                   "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80&auto=format&fit=crop",
               },
@@ -527,29 +522,33 @@ export default function TentangPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">
-              Mengapa Memilih Kami
+              ✦ Mengapa Memilih Dahayu
             </h2>
+            <p className="text-cream/70 text-lg max-w-3xl mx-auto leading-relaxed">
+              Karena setiap karya kami dibuat dengan hati, dan ditujukan untuk
+              menyentuh hati Anda.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: Shield,
-                title: "Garansi Seumur Hidup",
+                title: "🛡️ Jaminan Keaslian & Perawatan",
                 description:
-                  "Kami menjamin keaslian dan kualitas produk dengan garansi seumur hidup",
+                  "Setiap karya Dahayu dibuat dari bahan berkualitas tinggi dan melalui proses yang penuh ketelitian. Kami menjamin keaslian serta standar terbaik di setiap produk, dan menyediakan layanan perawatan agar perhiasan Anda selalu terjaga keindahannya seiring waktu.",
               },
               {
                 icon: Users,
-                title: "Konsultasi Gratis",
+                title: "💬 Konsultasi dengan Hati",
                 description:
-                  "Tim ahli kami siap membantu Anda memilih perhiasan yang sempurna",
+                  "Kami percaya bahwa setiap perempuan memiliki makna dan gaya yang berbeda. Tim kami siap membantu Anda menemukan perhiasan yang paling sesuai — yang tidak hanya memperindah tampilan, tetapi juga menumbuhkan rasa percaya diri dan ketenangan.",
               },
               {
-                icon: Clock,
-                title: "Custom Design",
+                icon: Sparkles,
+                title: "🌸 Makna yang Menemani",
                 description:
-                  "Wujudkan perhiasan impian Anda dengan layanan desain khusus",
+                  "Setiap karya Dahayu diciptakan untuk lebih dari sekadar dikenakan. Ia hadir sebagai pengingat lembut — bahwa keindahan sejati hidup di dalam diri, dan setiap langkah perempuan layak dirayakan dengan makna.",
               },
             ].map((reason, index) => (
               <motion.div

@@ -258,15 +258,23 @@ export default function FeaturedCollection() {
           </motion.h2>
 
           <h3 className="text-5xl md:text-7xl font-serif font-bold mb-8">
-            <span className="block text-gradient">Karya Seni</span>
-            <span className="block text-cream mt-2">Emas Kami</span>
+            <span className="block text-gradient">Karya Seni yang</span>
+            <span className="block text-cream mt-2">Menyatu dengan Alam</span>
           </h3>
 
-          <p className="text-cream/60 text-lg max-w-2xl mx-auto font-sans leading-relaxed">
-            Setiap perhiasan dirancang dengan teliti, menggabungkan
+          <p className="text-cream/60 text-lg max-w-3xl mx-auto font-sans leading-relaxed">
+            Setiap perhiasan Dahayu terinspirasi dari keindahan bentuk alam
             <br className="hidden md:block" />
-            keindahan alam dengan{" "}
-            <span className="text-gold">kemewahan emas murni</span>
+            dari pucuk daun, bunga, hingga butiran padi yang melambangkan
+            kehidupan.
+            <br className="hidden md:block" />
+            Melalui sentuhan para pengrajin, bentuk-bentuk itu menjelma menjadi
+            karya
+            <br className="hidden md:block" />
+            yang mengalirkan <span className="text-gold">energi lembut</span>,
+            mengingatkan setiap perempuan
+            <br className="hidden md:block" />
+            akan kekuatan, keanggunan, dan kecantikan sejatinya.
           </p>
         </motion.div>
 

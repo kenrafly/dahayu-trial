@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 export default function KontakPage() {
@@ -83,10 +83,13 @@ export default function KontakPage() {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <span className="text-gradient">Hubungi Kami</span>
+              <span className="text-gradient">Dahayu Jewelry</span>
             </motion.h1>
-            <p className="text-cream/70 text-lg md:text-xl max-w-2xl mx-auto font-light">
-              Kami siap membantu Anda menemukan perhiasan impian
+            <p className="text-cream/70 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
+              Setiap karya adalah perjalanan yang dirancang dengan hati.
+              <br className="hidden md:block" />
+              Bukan sekadar perhiasan, tetapi cara kami merayakan ketulusan
+              dalam bentuk yang abadi.
             </p>
           </motion.div>
         </div>
@@ -106,11 +109,11 @@ export default function KontakPage() {
             >
               <div>
                 <h2 className="text-3xl md:text-4xl font-serif font-bold text-gradient mb-6">
-                  Informasi Kontak
+                  Hubungi Kami
                 </h2>
                 <p className="text-cream/70 text-lg leading-relaxed">
-                  Jangan ragu untuk menghubungi kami. Tim kami siap membantu
-                  Anda dengan senang hati.
+                  Kami dengan senang hati menjawab setiap pertanyaan Anda dan
+                  membantu menemukan perhiasan yang bermakna.
                 </p>
               </div>
 
@@ -118,26 +121,22 @@ export default function KontakPage() {
                 {[
                   {
                     icon: MapPin,
-                    title: "Alamat",
-                    content: "Jl. Sunset Road No. 88, Seminyak, Bali 80361",
+                    title: "📍 Alamat",
+                    content:
+                      "Jl. Tukad Barito No. 58X, Panjer Denpasar, Bali – Indonesia",
                     link: "https://maps.google.com",
                   },
                   {
                     icon: Phone,
-                    title: "Telepon",
-                    content: "+62 812-3456-7890",
-                    link: "tel:+6281234567890",
+                    title: "📞 Telepon",
+                    content: "+62 857-2336-8060",
+                    link: "tel:+6285723368060",
                   },
                   {
                     icon: Mail,
-                    title: "Email",
+                    title: "✉️ Email",
                     content: "info@dahayujewelry.com",
                     link: "mailto:info@dahayujewelry.com",
-                  },
-                  {
-                    icon: Clock,
-                    title: "Jam Operasional",
-                    content: "Senin - Sabtu: 09:00 - 18:00\nMinggu: Tutup",
                   },
                 ].map((item, index) => (
                   <motion.div
