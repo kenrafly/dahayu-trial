@@ -52,23 +52,82 @@ export default function TentangPage() {
             style={{ y: y1 }}
             className="absolute top-20 right-20 w-96 h-96 bg-gold/10 rounded-full blur-3xl animate-glow"
           />
+
+          {/* Luxury Ornamental Elements */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            className="absolute top-40 left-20 w-32 h-32 border-2 border-gold/20"
+            style={{ borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%" }}
+          />
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-40 right-32 w-24 h-24 border border-gold/10"
+            style={{ borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }}
+          />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
+          {/* Luxury Emblem */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="mb-8 flex justify-center"
+          >
+            <div className="relative">
+              {/* Outer ring */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 w-32 h-32 rounded-full border-2 border-gold/30"
+                style={{
+                  transform: "translate(-50%, -50%)",
+                  left: "50%",
+                  top: "50%",
+                }}
+              />
+              {/* Inner emblem */}
+              <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-gold/20 via-gold/5 to-transparent border border-gold/40 backdrop-blur-sm flex items-center justify-center">
+                <motion.div
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                  className="text-gold text-4xl font-serif font-bold"
+                >
+                  D
+                </motion.div>
+              </div>
+              {/* Decorative corners */}
+              <div className="absolute -top-2 -left-2 w-3 h-3 border-t-2 border-l-2 border-gold/60" />
+              <div className="absolute -top-2 -right-2 w-3 h-3 border-t-2 border-r-2 border-gold/60" />
+              <div className="absolute -bottom-2 -left-2 w-3 h-3 border-b-2 border-l-2 border-gold/60" />
+              <div className="absolute -bottom-2 -right-2 w-3 h-3 border-b-2 border-r-2 border-gold/60" />
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-16 h-px bg-linear-to-r from-transparent via-gold to-transparent" />
+              <motion.div
+                className="w-16 h-px bg-linear-to-r from-transparent via-gold to-transparent"
+                animate={{ scaleX: [0.8, 1, 0.8] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
               >
                 <Sparkles className="w-6 h-6 text-gold" />
               </motion.div>
-              <div className="w-16 h-px bg-linear-to-r from-transparent via-gold to-transparent" />
+              <motion.div
+                className="w-16 h-px bg-linear-to-r from-transparent via-gold to-transparent"
+                animate={{ scaleX: [0.8, 1, 0.8] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+              />
             </div>
 
             <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
@@ -84,6 +143,22 @@ export default function TentangPage() {
 
       {/* Story Section */}
       <section className="relative py-20">
+        {/* Decorative side ornaments */}
+        <motion.div
+          animate={{ y: [0, 20, 0] }}
+          transition={{ duration: 6, repeat: Infinity }}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 opacity-20"
+        >
+          <div className="w-1 h-32 bg-gradient-to-b from-transparent via-gold to-transparent" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, -20, 0] }}
+          transition={{ duration: 6, repeat: Infinity }}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 opacity-20"
+        >
+          <div className="w-1 h-32 bg-gradient-to-b from-transparent via-gold to-transparent" />
+        </motion.div>
+
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -93,6 +168,12 @@ export default function TentangPage() {
               transition={{ duration: 0.8 }}
               className="relative perspective-container"
             >
+              {/* Decorative frame corners */}
+              <div className="absolute -top-4 -left-4 w-16 h-16 border-t-2 border-l-2 border-gold/40 z-10" />
+              <div className="absolute -top-4 -right-4 w-16 h-16 border-t-2 border-r-2 border-gold/40 z-10" />
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 border-b-2 border-l-2 border-gold/40 z-10" />
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-2 border-r-2 border-gold/40 z-10" />
+
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.5 }}
@@ -106,6 +187,20 @@ export default function TentangPage() {
                   className="w-full h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-dark via-dark/20 to-transparent" />
+
+                {/* Golden shimmer overlay */}
+                <motion.div
+                  animate={{
+                    x: ["-100%", "100%"],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatDelay: 2,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-gold/20 to-transparent skew-x-12"
+                />
               </motion.div>
 
               {/* Floating card */}
@@ -128,8 +223,29 @@ export default function TentangPage() {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient">
+              {/* Section ornament */}
+              <div className="flex items-center gap-4 mb-8">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="w-8 h-8 border border-gold/40"
+                  style={{ borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%" }}
+                />
+                <div className="h-px flex-1 bg-gradient-to-r from-gold/40 to-transparent" />
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient relative">
                 Cerita Kami
+                {/* Decorative accent */}
+                <motion.div
+                  animate={{ scaleX: [0, 1] }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  className="absolute -bottom-2 left-0 w-20 h-1 bg-gradient-to-r from-gold to-transparent"
+                />
               </h2>
 
               <div className="space-y-4 text-cream/70 text-lg leading-relaxed">
@@ -194,6 +310,17 @@ export default function TentangPage() {
 
       {/* Philosophy Section */}
       <section className="relative py-20">
+        {/* Luxury background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 2px 2px, #c6a664 1px, transparent 0)`,
+              backgroundSize: "40px 40px",
+            }}
+          />
+        </div>
+
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -201,6 +328,30 @@ export default function TentangPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            {/* Ornamental header */}
+            <div className="flex items-center justify-center gap-6 mb-8">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-12 h-12 border-2 border-gold/30 transform rotate-45" />
+              </motion.div>
+              <div className="relative">
+                <div className="w-2 h-2 bg-gold rounded-full" />
+                <motion.div
+                  animate={{ scale: [1, 1.5, 1], opacity: [1, 0, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute inset-0 w-2 h-2 bg-gold rounded-full"
+                />
+              </div>
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-12 h-12 border-2 border-gold/30 transform rotate-45" />
+              </motion.div>
+            </div>
+
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">
               Filosofi Dahayu
             </h2>
@@ -356,7 +507,34 @@ export default function TentangPage() {
       </section>
 
       {/* Values Section */}
-      <section className="relative py-20 bg-dark-lighter">
+      <section className="relative py-20 bg-dark-lighter overflow-hidden">
+        {/* Elegant corner ornaments */}
+        <div className="absolute top-0 left-0 w-64 h-64 border-l-2 border-t-2 border-gold/10 opacity-50" />
+        <div className="absolute top-0 right-0 w-64 h-64 border-r-2 border-t-2 border-gold/10 opacity-50" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 border-l-2 border-b-2 border-gold/10 opacity-50" />
+        <div className="absolute bottom-0 right-0 w-64 h-64 border-r-2 border-b-2 border-gold/10 opacity-50" />
+
+        {/* Floating particles */}
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.2, 0.5, 0.2],
+            }}
+            transition={{
+              duration: 4 + i,
+              repeat: Infinity,
+              delay: i * 0.5,
+            }}
+            className="absolute w-1 h-1 bg-gold rounded-full"
+            style={{
+              left: `${10 + i * 12}%`,
+              top: `${20 + (i % 3) * 30}%`,
+            }}
+          />
+        ))}
+
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -364,8 +542,17 @@ export default function TentangPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            {/* Luxury star emblem */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+              className="inline-block mb-6"
+            >
+              <div className="text-gold text-5xl">✦</div>
+            </motion.div>
+
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">
-              ✦ Nilai-Nilai Kami
+              Nilai-Nilai Kami
             </h2>
             <p className="text-cream/70 text-lg max-w-3xl mx-auto leading-relaxed">
               Empat prinsip yang menuntun setiap ciptaan Dahayu.
@@ -513,16 +700,48 @@ export default function TentangPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="relative py-20 bg-dark-lighter">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="relative py-20 bg-dark-lighter overflow-hidden">
+        {/* Radial gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-radial from-gold/5 via-transparent to-transparent" />
+
+        {/* Geometric luxury pattern */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-5"
+        >
+          <div
+            className="absolute inset-0 border-2 border-gold"
+            style={{ borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%" }}
+          />
+          <div
+            className="absolute inset-8 border border-gold"
+            style={{ borderRadius: "70% 30% 30% 70% / 70% 70% 30% 30%" }}
+          />
+        </motion.div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            {/* Luxury divider */}
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="w-24 h-px bg-gradient-to-r from-transparent to-gold" />
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="text-gold text-3xl"
+              >
+                ✦
+              </motion.div>
+              <div className="w-24 h-px bg-gradient-to-l from-transparent to-gold" />
+            </div>
+
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">
-              ✦ Mengapa Memilih Dahayu
+              Mengapa Memilih Dahayu
             </h2>
             <p className="text-cream/70 text-lg max-w-3xl mx-auto leading-relaxed">
               Karena setiap karya kami dibuat dengan hati, dan ditujukan untuk
@@ -542,13 +761,13 @@ export default function TentangPage() {
                 icon: Users,
                 title: "💬 Konsultasi dengan Hati",
                 description:
-                  "Kami percaya bahwa setiap perempuan memiliki makna dan gaya yang berbeda. Tim kami siap membantu Anda menemukan perhiasan yang paling sesuai — yang tidak hanya memperindah tampilan, tetapi juga menumbuhkan rasa percaya diri dan ketenangan.",
+                  "Kami percaya bahwa setiap perempuan memiliki makna dan gaya yang berbeda. Tim kami siap membantu Anda menemukan perhiasan yang paling sesuai yang tidak hanya memperindah tampilan, tetapi juga menumbuhkan rasa percaya diri dan ketenangan.",
               },
               {
                 icon: Sparkles,
                 title: "🌸 Makna yang Menemani",
                 description:
-                  "Setiap karya Dahayu diciptakan untuk lebih dari sekadar dikenakan. Ia hadir sebagai pengingat lembut — bahwa keindahan sejati hidup di dalam diri, dan setiap langkah perempuan layak dirayakan dengan makna.",
+                  "Setiap karya Dahayu diciptakan untuk lebih dari sekadar dikenakan. Ia hadir sebagai pengingat lembut bahwa keindahan sejati hidup di dalam diri, dan setiap langkah perempuan layak dirayakan dengan makna.",
               },
             ].map((reason, index) => (
               <motion.div
