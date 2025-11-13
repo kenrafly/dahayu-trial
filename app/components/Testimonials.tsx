@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
-const testimonials = [
+const testimonialsRow1 = [
   {
     id: 1,
     name: "Sarah Wijaya",
@@ -33,9 +33,39 @@ const testimonials = [
   },
 ];
 
+const testimonialsRow2 = [
+  {
+    id: 4,
+    name: "Rina Sari",
+    location: "Bandung",
+    text: "Pelayanan yang ramah dan profesional. Perhiasan custom yang saya pesan sesuai harapan, bahkan melebihi ekspektasi!",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
+  },
+  {
+    id: 5,
+    name: "Putri Maharani",
+    location: "Yogyakarta",
+    text: "Setiap detail dikerjakan dengan sempurna. Saya merasakan energi positif dari perhiasan Dahayu yang saya pakai.",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=200&q=80",
+  },
+  {
+    id: 6,
+    name: "Lisa Kartika",
+    location: "Medan",
+    text: "Investasi terbaik! Perhiasan Dahayu tidak hanya indah tapi juga bernilai tinggi. Sangat puas dengan kualitasnya.",
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&q=80",
+  },
+];
+
 export default function Testimonials() {
   return (
-    <section className="relative py-32 px-4 md:px-8 lg:px-16 bg-dark-lighter overflow-hidden">
+    <section className="relative py-16 bg-dark-lighter overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 opacity-20">
         <motion.div
@@ -50,102 +80,148 @@ export default function Testimonials() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 px-6"
         >
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-20 h-px bg-gold/50" />
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="w-2 h-2 bg-gold transform rotate-45"
-            />
-            <div className="w-20 h-px bg-gold/50" />
-          </div>
-
-          <h2 className="text-gold text-sm md:text-base font-light tracking-[0.3em] mb-6 font-sans uppercase">
+          <h2 className="text-gold text-sm font-light tracking-[0.3em] mb-3 font-sans uppercase">
             Testimoni
           </h2>
 
-          <h3 className="text-5xl md:text-6xl font-serif font-bold mb-6">
-            <span className="block text-gradient">Cerita</span>
-            <span className="block text-cream">Pelanggan Kami</span>
+          <h3 className="text-4xl md:text-5xl font-serif font-bold">
+            <span className="text-gradient">Cerita </span>
+            <span className="text-cream">Pelanggan Kami</span>
           </h3>
-
-          <p className="text-cream/60 text-lg max-w-2xl mx-auto font-sans">
-            Kepercayaan dan kepuasan pelanggan adalah{" "}
-            <span className="text-gold">kebanggaan kami</span>
-          </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {testimonials.map((testimonial, index) => (
+        {/* Testimonials Marquee - 2 Rows Full Screen */}
+        <div className="space-y-4 mb-12">
+          {/* Row 1 - Left to Right */}
+          <div className="relative">
             <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="group relative p-8 glass-effect rounded-3xl hover:bg-gold/5 transition-all duration-500 luxury-glow perspective-container"
+              animate={{ x: [0, -1920] }}
+              transition={{
+                duration: 35,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="flex gap-3"
             >
-              {/* Quote Icon */}
-              <motion.div
-                className="absolute top-6 right-6"
-                whileHover={{ rotate: 180, scale: 1.2 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Quote className="w-12 h-12 text-gold/20 group-hover:text-gold/40 transition-colors duration-300" />
-              </motion.div>
+              {[
+                ...testimonialsRow1,
+                ...testimonialsRow1,
+                ...testimonialsRow1,
+              ].map((testimonial, index) => (
+                <div
+                  key={`row1-${index}`}
+                  className="group relative p-4 md:p-5 glass-effect rounded-xl hover:bg-gold/5 transition-all duration-500 luxury-glow w-[calc(100vw-3rem)] md:min-w-[320px] md:w-auto shrink-0"
+                >
+                  {/* Quote Icon */}
+                  <div className="absolute top-3 right-3">
+                    <Quote className="w-6 h-6 md:w-7 md:h-7 text-gold/20 group-hover:text-gold/40 transition-colors duration-300" />
+                  </div>
 
-              {/* Rating */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{ scale: 1.2, rotate: 360 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <Star className="w-5 h-5 fill-gold text-gold" />
-                  </motion.div>
-                ))}
-              </div>
+                  {/* Rating */}
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-3.5 h-3.5 fill-gold text-gold"
+                      />
+                    ))}
+                  </div>
 
-              {/* Text */}
-              <p className="text-cream/80 text-base leading-relaxed mb-8 font-sans relative z-10">
-                &ldquo;{testimonial.text}&rdquo;
-              </p>
-
-              {/* Customer Info */}
-              <div className="flex items-center gap-4 pt-6 border-t border-gold/10">
-                <motion.img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-gold/30"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <div>
-                  <h4 className="font-serif font-semibold text-cream text-lg">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-cream/50 text-sm font-sans">
-                    {testimonial.location}
+                  {/* Text */}
+                  <p className="text-cream/80 text-xs md:text-sm leading-relaxed mb-4 font-sans relative z-10 h-16 md:h-18 line-clamp-3">
+                    &ldquo;{testimonial.text}&rdquo;
                   </p>
-                </div>
-              </div>
 
-              {/* Decorative corner */}
-              <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-gold/20 rounded-tl-3xl group-hover:border-gold/50 transition-colors duration-500" />
+                  {/* Customer Info */}
+                  <div className="flex items-center gap-2.5 pt-3 border-t border-gold/10">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover border-2 border-gold/30"
+                    />
+                    <div>
+                      <h4 className="font-serif font-semibold text-cream text-sm md:text-base">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-cream/50 text-[10px] md:text-xs font-sans">
+                        {testimonial.location}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </motion.div>
-          ))}
+          </div>
+
+          {/* Row 2 - Right to Left */}
+          <div className="relative">
+            <motion.div
+              animate={{ x: [-1920, 0] }}
+              transition={{
+                duration: 35,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="flex gap-3"
+            >
+              {[
+                ...testimonialsRow2,
+                ...testimonialsRow2,
+                ...testimonialsRow2,
+              ].map((testimonial, index) => (
+                <div
+                  key={`row2-${index}`}
+                  className="group relative p-4 md:p-5 glass-effect rounded-xl hover:bg-gold/5 transition-all duration-500 luxury-glow w-[calc(100vw-3rem)] md:min-w-[320px] md:w-auto shrink-0"
+                >
+                  {/* Quote Icon */}
+                  <div className="absolute top-3 right-3">
+                    <Quote className="w-6 h-6 md:w-7 md:h-7 text-gold/20 group-hover:text-gold/40 transition-colors duration-300" />
+                  </div>
+
+                  {/* Rating */}
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-3.5 h-3.5 fill-gold text-gold"
+                      />
+                    ))}
+                  </div>
+
+                  {/* Text */}
+                  <p className="text-cream/80 text-xs md:text-sm leading-relaxed mb-4 font-sans relative z-10 h-16 md:h-18 line-clamp-3">
+                    &ldquo;{testimonial.text}&rdquo;
+                  </p>
+
+                  {/* Customer Info */}
+                  <div className="flex items-center gap-2.5 pt-3 border-t border-gold/10">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover border-2 border-gold/30"
+                    />
+                    <div>
+                      <h4 className="font-serif font-semibold text-cream text-sm md:text-base">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-cream/50 text-[10px] md:text-xs font-sans">
+                        {testimonial.location}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
         {/* Trust Stats */}
@@ -154,7 +230,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center px-6"
         >
           {[
             { value: "500+", label: "Pelanggan Setia" },
@@ -169,12 +245,12 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5, scale: 1.05 }}
-              className="p-6 glass-effect rounded-2xl luxury-glow"
+              className="p-5 glass-effect rounded-xl luxury-glow"
             >
-              <h4 className="text-5xl font-serif font-bold text-gradient mb-2">
+              <h4 className="text-4xl font-serif font-bold text-gradient mb-1">
                 {stat.value}
               </h4>
-              <p className="text-cream/60 font-sans text-sm">{stat.label}</p>
+              <p className="text-cream/60 font-sans text-xs">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>
