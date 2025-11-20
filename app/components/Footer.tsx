@@ -90,19 +90,20 @@ export default function Footer() {
             <div className="flex items-start gap-3 text-cream/60 mb-6">
               <MapPin className="w-5 h-5 text-gold mt-1 shrink-0" />
               <div className="font-sans text-sm">
-                <p>Jl. Raya Ubud No. 123</p>
-                <p>Gianyar, Bali 80571</p>
+                <p>Jl. Pantai Berawa No. 46X</p>
+                <p>Tibubeneng, Canggu</p>
+                <p>Badung, Bali 80361</p>
                 <p>Indonesia</p>
               </div>
             </div>
 
             {/* Phone */}
             <a
-              href="tel:+6281234567890"
+              href="tel:+6281934417289"
               className="flex items-center gap-3 text-cream/60 hover:text-gold transition-colors duration-300 mb-8"
             >
               <Phone className="w-5 h-5" />
-              <span className="font-sans text-sm">+62 812-3456-7890</span>
+              <span className="font-sans text-sm">+62 819-3441-7289</span>
             </a>
 
             {/* Social Links */}

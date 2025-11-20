@@ -38,35 +38,31 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-dark">
+    <section className="relative w-full bg-dark">
       {/* Image Carousel Background */}
-      <div className="relative z-0 h-screen">
-        <AnimatePresence initial={false}>
+      <div className="relative z-0 w-full">
+        <AnimatePresence initial={false} mode="popLayout">
           <motion.div
             key={currentIndex}
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ duration: 0.8, ease: [0.21, 0.45, 0.27, 0.9] }}
-            className="absolute inset-0 w-full h-full"
+            className="w-full"
           >
             {/* Mobile - Portrait */}
-            <div className="md:hidden w-full h-full">
-              <img
-                src={heroImages[currentIndex].portrait}
-                alt="Dahayu Jewelry"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <img
+              src={heroImages[currentIndex].portrait}
+              alt="Dahayu Jewelry"
+              className="w-full h-auto md:hidden"
+            />
 
             {/* Desktop - Landscape */}
-            <div className="hidden md:block w-full h-full">
-              <img
-                src={heroImages[currentIndex].landscape}
-                alt="Dahayu Jewelry"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <img
+              src={heroImages[currentIndex].landscape}
+              alt="Dahayu Jewelry"
+              className="w-full h-auto hidden md:block"
+            />
           </motion.div>
         </AnimatePresence>
 

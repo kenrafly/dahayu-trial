@@ -63,7 +63,7 @@ function ProductCard({
             rotateY,
             transformStyle: "preserve-3d",
           }}
-          className="relative bg-dark-lighter rounded-3xl overflow-hidden border border-gold/10 hover:border-gold/30 transition-all duration-500 cursor-pointer"
+          className="relative bg-dark-lighter rounded-3xl overflow-hidden border border-gold/10 hover:border-gold/30 transition-all duration-500 cursor-pointer flex flex-col h-full"
         >
           {/* Image Container */}
           <div className="relative h-[400px] overflow-hidden shrink-0">
@@ -125,20 +125,21 @@ function ProductCard({
           </div>
 
           {/* Content */}
-          <div className="p-8">
+          <div className="p-8 flex flex-col flex-1">
             <motion.div
               animate={{
                 y: isHovered ? -5 : 0,
               }}
               transition={{ duration: 0.3 }}
+              className="flex flex-col h-full"
             >
               <h3 className="text-2xl md:text-3xl font-serif font-bold text-cream mb-2 group-hover:text-gold transition-colors duration-300">
                 {product.name}
               </h3>
-              <p className="text-cream/50 text-sm mb-4 font-sans">
+              <p className="text-cream/50 text-sm mb-4 font-sans line-clamp-2 flex-1">
                 {product.description}
               </p>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mt-auto">
                 <span className="text-gold-light text-xl font-semibold">
                   {product.price}
                 </span>
