@@ -1,259 +1,96 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronDown } from "lucide-react";
-import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
-const sparklePositions = [
-  { top: "10%", left: "15%" },
-  { top: "20%", left: "85%" },
-  { top: "30%", left: "25%" },
-  { top: "40%", left: "75%" },
-  { top: "50%", left: "10%" },
-  { top: "60%", left: "90%" },
-  { top: "70%", left: "30%" },
-  { top: "80%", left: "70%" },
-  { top: "15%", left: "50%" },
-  { top: "25%", left: "40%" },
-  { top: "35%", left: "60%" },
-  { top: "45%", left: "20%" },
-  { top: "55%", left: "80%" },
-  { top: "65%", left: "35%" },
-  { top: "75%", left: "65%" },
-  { top: "85%", left: "45%" },
-  { top: "18%", left: "55%" },
-  { top: "28%", left: "12%" },
-  { top: "38%", left: "88%" },
-  { top: "48%", left: "42%" },
+const heroImages = [
+  {
+    landscape: "/hero-section/landscape/1.png",
+    portrait: "/hero-section/potrait/1p.png",
+  },
+  {
+    landscape: "/hero-section/landscape/2.png",
+    portrait: "/hero-section/potrait/2p.png",
+  },
+  {
+    landscape: "/hero-section/landscape/3.png",
+    portrait: "/hero-section/potrait/3p.png",
+  },
+  {
+    landscape: "/hero-section/landscape/4.png",
+    portrait: "/hero-section/potrait/4p.png",
+  },
+  {
+    landscape: "/hero-section/landscape/5.png",
+    portrait: "/hero-section/potrait/5p.png",
+  },
 ];
 
 export default function Hero() {
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 150]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-dark pt-24">
-      {/* Grain overlay */}
-      <div className="grain-overlay" />
-
-      {/* Animated background with complex gradients */}
-      <div className="absolute inset-0">
-        {/* Main gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-dark via-green-dark/30 to-dark opacity-90" />
-
-        {/* Animated liquid shapes */}
-        <motion.div
-          style={{ y: y1 }}
-          className="absolute -top-40 -right-40 w-[800px] h-[800px] liquid-shape bg-gradient-radial from-gold/20 via-gold/10 to-transparent blur-3xl animate-glow"
-        />
-        <motion.div
-          style={{ y: y2 }}
-          className="absolute -bottom-40 -left-40 w-[600px] h-[600px] liquid-shape bg-gradient-radial from-gold-light/20 via-gold-light/10 to-transparent blur-3xl animate-glow"
-        />
-
-        {/* Additional floating orbs */}
-        <motion.div
-          animate={{
-            y: [0, -50, 0],
-            x: [0, 30, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-1/3 left-1/4 w-64 h-64 bg-gold/10 rounded-full blur-2xl"
-        />
-        <motion.div
-          animate={{
-            y: [0, 40, 0],
-            x: [0, -20, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-gold-light/10 rounded-full blur-3xl"
-        />
-
-        {/* Floating geometric shapes */}
-        <motion.div
-          animate={{
-            rotate: 360,
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute top-1/4 right-1/4 w-32 h-32 border border-gold/20 rounded-[30%] luxury-glow"
-          style={{ transform: "rotate(45deg)" }}
-        />
-        <motion.div
-          animate={{
-            rotate: -360,
-            y: [0, 30, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-1/3 left-1/3 w-24 h-24 border-2 border-gold-light/10"
-        />
-
-        {/* Sparkle particles */}
-        {sparklePositions.map((pos, i) => (
+    <section className="relative w-full overflow-hidden bg-dark md:pt-24">
+      {/* Image Carousel Background */}
+      <div className="relative z-0">
+        <AnimatePresence mode="wait">
           <motion.div
-            key={i}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{
-              opacity: [0, 1, 0],
-              scale: [0, 1, 0],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: i * 0.3,
-              ease: "easeInOut",
-            }}
-            className="absolute w-1 h-1 bg-gold rounded-full"
-            style={{
-              top: pos.top,
-              left: pos.left,
-            }}
-          />
-        ))}
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          >
+            {/* Mobile - Portrait */}
+            <div className="md:hidden">
+              <img
+                src={heroImages[currentIndex].portrait}
+                alt="Dahayu Jewelry"
+                className="w-full h-auto"
+              />
+            </div>
 
-        {/* Grid pattern overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.015]"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(198, 166, 100, 0.5) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(198, 166, 100, 0.5) 1px, transparent 1px)
-            `,
-            backgroundSize: "100px 100px",
-          }}
-        />
+            {/* Desktop - Landscape */}
+            <div className="hidden md:block">
+              <img
+                src={heroImages[currentIndex].landscape}
+                alt="Dahayu Jewelry"
+                className="w-full h-auto"
+              />
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Carousel indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? "bg-gold w-8"
+                  : "bg-cream/30 hover:bg-cream/50"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
-      {/* Content */}
-      <motion.div
-        style={{ opacity }}
-        className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] px-4 text-center py-12"
-      >
-        {/* Decorative line top */}
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "100px" }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mb-8"
-        />
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="mb-6 space-y-6"
-        >
-          {/* Small title */}
-          <motion.h2
-            initial={{ opacity: 0, letterSpacing: "0.5em" }}
-            animate={{ opacity: 1, letterSpacing: "0.3em" }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="text-gold text-sm md:text-base font-light tracking-[0.3em] mb-4 font-sans uppercase"
-          >
-            Dahayu Jewelry
-          </motion.h2>
-
-          {/* Main title with gradient */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold mb-6 leading-[0.9]">
-            <span className="block text-gradient">Desire Meets</span>
-            <span className="block text-cream mt-4">Creation</span>
-          </h1>
-
-          {/* Decorative diamond shape */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="inline-block w-3 h-3 bg-gold transform rotate-45 mx-auto my-6"
-          />
-
-          <p className="text-cream/60 text-lg md:text-xl font-light max-w-3xl mx-auto font-sans leading-relaxed">
-            Dahayu menghadirkan karya seni yang lahir dari keinginan dan
-            keindahan alam.
-            <br className="hidden md:block" />
-            Setiap perhiasan dibuat dari{" "}
-            <span className="text-gold-light">
-              perak 925 berlapis emas 18 karat
-            </span>
-            ,
-            <br className="hidden md:block" />
-            diciptakan dengan energi positif dan sentuhan penuh makna
-            <br className="hidden md:block" />
-            karena keanggunan sejati bukan hanya tentang kilau,
-            <br className="hidden md:block" />
-            tetapi tentang jiwa yang hidup di balik setiap ciptaan.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 mt-12"
-        >
-          <Link href="/koleksi">
-            <div className="group relative px-10 py-5 bg-gold text-dark font-semibold rounded-full overflow-hidden transition-all duration-500 transform hover:scale-105 cursor-pointer">
-              <span className="relative z-10">Jelajahi Koleksi</span>
-              <div className="absolute inset-0 bg-gold-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            </div>
-          </Link>
-          <Link href="/tentang">
-            <div className="group relative px-10 py-5 bg-transparent border-2 border-gold/30 text-cream font-semibold rounded-full overflow-hidden backdrop-blur-sm hover:border-gold transition-all duration-500 transform hover:scale-105 cursor-pointer">
-              <span className="relative z-10 group-hover:text-gold-light transition-colors duration-300">
-                Tentang Kami
-              </span>
-              <div className="absolute inset-0 bg-gold/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right" />
-            </div>
-          </Link>
-        </motion.div>
-
-        {/* Decorative line bottom */}
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "100px" }}
-          transition={{ duration: 1, delay: 1 }}
-          className="h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mt-12"
-        />
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.4 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 15, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2"
-          >
-            <span className="text-gold/60 text-xs tracking-widest uppercase">
-              Scroll
-            </span>
-            <ChevronDown className="w-6 h-6 text-gold" />
-          </motion.div>
-        </motion.div>
-      </motion.div>
+      {/* Grain overlay */}
+      <div className="grain-overlay z-10" />
 
       {/* Vignette effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-dark/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-dark/50 pointer-events-none z-10" />
     </section>
   );
 }
