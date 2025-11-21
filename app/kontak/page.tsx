@@ -53,7 +53,7 @@ export default function KontakPage() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1
-              className="text-5xl md:text-7xl font-serif font-bold mb-6"
+              className="text-5xl md:text-7xl font-serif font-light mb-6"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -81,7 +81,7 @@ export default function KontakPage() {
             className="space-y-8"
           >
             <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-gradient mb-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-light text-gradient mb-6">
                 Hubungi Kami
               </h2>
               <p className="text-cream/70 text-lg leading-relaxed">
@@ -156,7 +156,7 @@ export default function KontakPage() {
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleWhatsAppDirect}
-              className="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transition-colors shadow-lg shadow-green-600/30 luxury-glow"
+              className="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-5 rounded-2xl font-normal text-lg flex items-center justify-center gap-3 transition-colors shadow-lg shadow-green-600/30 luxury-glow"
             >
               <motion.div
                 animate={{ rotate: [0, 15, -15, 0] }}

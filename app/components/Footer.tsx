@@ -71,7 +71,7 @@ export default function Footer() {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="w-2 h-2 bg-gold transform rotate-45"
               />
-              <h3 className="text-4xl font-serif font-bold text-gold">
+              <h3 className="text-4xl font-serif font-light text-gold">
                 Dahayu Jewelry
               </h3>
               <motion.div
@@ -90,20 +90,19 @@ export default function Footer() {
             <div className="flex items-start gap-3 text-cream/60 mb-6">
               <MapPin className="w-5 h-5 text-gold mt-1 shrink-0" />
               <div className="font-sans text-sm">
-                <p>Jl. Pantai Berawa No. 46X</p>
-                <p>Tibubeneng, Canggu</p>
-                <p>Badung, Bali 80361</p>
-                <p>Indonesia</p>
+                <p>Jl. Tukad Barito No. 58X</p>
+                <p>Panjer Denpasar</p>
+                <p>Bali – Indonesia</p>
               </div>
             </div>
 
             {/* Phone */}
             <a
-              href="tel:+6281934417289"
+              href="tel:+6285723368060"
               className="flex items-center gap-3 text-cream/60 hover:text-gold transition-colors duration-300 mb-8"
             >
               <Phone className="w-5 h-5" />
-              <span className="font-sans text-sm">+62 819-3441-7289</span>
+              <span className="font-sans text-sm">+62 857-2336-8060</span>
             </a>
 
             {/* Social Links */}
@@ -131,7 +130,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-3"
           >
-            <h4 className="text-xl font-serif font-semibold text-gold mb-6">
+            <h4 className="text-xl font-serif font-normal text-gold mb-6">
               Navigasi
             </h4>
             <ul className="space-y-3">
@@ -158,7 +157,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <h4 className="text-xl font-serif font-semibold text-gold mb-6">
+            <h4 className="text-xl font-serif font-normal text-gold mb-6">
               Koleksi
             </h4>
             <ul className="space-y-3">
@@ -184,7 +183,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="lg:col-span-2"
           >
-            <h4 className="text-xl font-serif font-semibold text-gold mb-6">
+            <h4 className="text-xl font-serif font-normal text-gold mb-6">
               Newsletter
             </h4>
             <p className="text-cream/60 text-sm font-sans mb-4">
@@ -196,7 +195,7 @@ export default function Footer() {
                 placeholder="Email Anda"
                 className="w-full px-4 py-3 bg-dark-lighter border border-gold/20 rounded-xl text-cream placeholder:text-cream/40 focus:outline-none focus:border-gold transition-colors duration-300"
               />
-              <button className="w-full px-4 py-3 bg-gold text-dark font-semibold rounded-xl hover:bg-gold-light transition-all duration-300">
+              <button className="w-full px-4 py-3 bg-gold text-dark font-normal rounded-xl hover:bg-gold-light transition-all duration-300">
                 Subscribe
               </button>
             </div>

@@ -89,7 +89,7 @@ function ProductCard({
               animate={{ opacity: isHovered ? 1 : 0 }}
               className="absolute top-6 right-6 w-16 h-16 rounded-full glass-effect flex items-center justify-center"
             >
-              <span className="text-gold text-2xl font-serif font-bold">
+              <span className="text-gold text-2xl font-serif font-light">
                 {index + 1}
               </span>
             </motion.div>
@@ -136,14 +136,14 @@ function ProductCard({
               transition={{ duration: 0.3 }}
               className="flex flex-col h-full"
             >
-              <h3 className="text-2xl md:text-3xl font-serif font-bold text-cream mb-2 group-hover:text-gold transition-colors duration-300">
+              <h3 className="text-2xl md:text-3xl font-serif font-light text-cream mb-2 group-hover:text-gold transition-colors duration-300">
                 {product.name}
               </h3>
               <p className="text-cream/50 text-sm mb-4 font-sans line-clamp-2 flex-1">
                 {product.description}
               </p>
               <div className="flex items-center justify-between mt-auto">
-                <span className="text-gold-light text-xl font-semibold">
+                <span className="text-gold-light text-xl font-normal">
                   {product.price}
                 </span>
                 <motion.div
@@ -208,7 +208,7 @@ export default function FeaturedCollection() {
             Koleksi Eksklusif
           </motion.h2>
 
-          <h3 className="text-5xl md:text-7xl font-serif font-bold mb-8">
+          <h3 className="text-5xl md:text-7xl font-serif font-light mb-8">
             <span className="block text-gradient">Karya Seni yang</span>
             <span className="block text-cream mt-2">Menyatu dengan Alam</span>
           </h3>
@@ -246,7 +246,7 @@ export default function FeaturedCollection() {
         >
           <Link
             href="/koleksi"
-            className="group inline-flex items-center gap-4 px-12 py-6 bg-transparent border-2 border-gold/30 text-gold font-semibold rounded-full hover:bg-gold hover:text-dark hover:border-gold transition-all duration-500 transform hover:scale-105"
+            className="group inline-flex items-center gap-4 px-12 py-6 bg-transparent border-2 border-gold/30 text-gold font-normal rounded-full hover:bg-gold hover:text-dark hover:border-gold transition-all duration-500 transform hover:scale-105"
           >
             <span className="tracking-wider">Lihat Semua Koleksi</span>
             <motion.div

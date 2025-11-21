@@ -75,7 +75,7 @@ export default function KoleksiPage() {
               <div className="w-16 h-px bg-linear-to-r from-transparent via-gold to-transparent" />
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl font-serif font-light mb-6">
               <span className="text-gradient">Koleksi Premium</span>
             </h1>
             <p className="text-cream/70 text-lg md:text-xl max-w-2xl mx-auto font-light">
@@ -187,7 +187,7 @@ export default function KoleksiPage() {
 
                     {/* Content */}
                     <div className="p-6 flex flex-col flex-1">
-                      <h3 className="text-xl font-serif font-bold text-cream mb-2 group-hover:text-gold transition-colors">
+                      <h3 className="text-xl font-serif font-light text-cream mb-2 group-hover:text-gold transition-colors">
                         {product.name}
                       </h3>
                       <p className="text-cream/60 text-sm mb-4 line-clamp-2 flex-1">
@@ -195,7 +195,7 @@ export default function KoleksiPage() {
                       </p>
 
                       <div className="flex items-center justify-between mt-auto">
-                        <span className="text-gold text-lg font-semibold">
+                        <span className="text-gold text-lg font-normal">
                           {product.price}
                         </span>
                         <motion.div

@@ -93,7 +93,7 @@ export default function Testimonials() {
             Testimoni
           </h2>
 
-          <h3 className="text-4xl md:text-5xl font-serif font-bold">
+          <h3 className="text-4xl md:text-5xl font-serif font-light">
             <span className="text-gradient">Cerita </span>
             <span className="text-cream">Pelanggan Kami</span>
           </h3>
@@ -149,7 +149,7 @@ export default function Testimonials() {
                       className="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover border-2 border-gold/30"
                     />
                     <div>
-                      <h4 className="font-serif font-semibold text-cream text-sm md:text-base">
+                      <h4 className="font-serif font-normal text-cream text-sm md:text-base">
                         {testimonial.name}
                       </h4>
                       <p className="text-cream/50 text-[10px] md:text-xs font-sans">
@@ -210,7 +210,7 @@ export default function Testimonials() {
                       className="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover border-2 border-gold/30"
                     />
                     <div>
-                      <h4 className="font-serif font-semibold text-cream text-sm md:text-base">
+                      <h4 className="font-serif font-normal text-cream text-sm md:text-base">
                         {testimonial.name}
                       </h4>
                       <p className="text-cream/50 text-[10px] md:text-xs font-sans">
@@ -230,13 +230,12 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center px-6"
+          className="grid grid-cols-3 gap-6 text-center px-6"
         >
           {[
-            { value: "500+", label: "Pelanggan Setia" },
-            { value: "15+", label: "Tahun Pengalaman" },
-            { value: "100%", label: "Emas Murni" },
-            { value: "24K", label: "Kualitas Terjamin" },
+            { value: "5+", label: "Tahun Pengalaman" },
+            { value: "18K", label: "Emas Premium" },
+            { value: "925", label: "Perak Sterling" },
           ].map((stat, index) => (
             <motion.div
               key={index}
@@ -247,7 +246,7 @@ export default function Testimonials() {
               whileHover={{ y: -5, scale: 1.05 }}
               className="p-5 glass-effect rounded-xl luxury-glow"
             >
-              <h4 className="text-4xl font-serif font-bold text-gradient mb-1">
+              <h4 className="text-4xl font-serif font-light text-gradient mb-1">
                 {stat.value}
               </h4>
               <p className="text-cream/60 font-sans text-xs">{stat.label}</p>

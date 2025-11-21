@@ -86,7 +86,7 @@ export default function About() {
 
               <div className="relative h-full rounded-[40px] overflow-hidden border border-gold/20 luxury-glow perspective-container">
                 <motion.img
-                  src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80&auto=format&fit=crop"
+                  src="/anniv.jpg"
                   alt="Handcrafted Gold Jewelry"
                   className="w-full h-full object-cover"
                   whileHover={{ scale: 1.05 }}
@@ -106,19 +106,19 @@ export default function About() {
                   <div className="glass-effect p-6 rounded-2xl luxury-glow">
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <p className="text-gold text-4xl font-serif font-bold">
-                          15+
+                        <p className="text-gold text-4xl font-serif font-light">
+                          5+
                         </p>
                         <p className="text-cream/60 text-sm font-sans">
                           Tahun Pengalaman
                         </p>
                       </div>
                       <div>
-                        <p className="text-gold text-4xl font-serif font-bold">
-                          500+
+                        <p className="text-gold text-4xl font-serif font-light">
+                          Emas 18K
                         </p>
                         <p className="text-cream/60 text-sm font-sans">
-                          Karya Tercipta
+                          Kualitas Premium
                         </p>
                       </div>
                     </div>
@@ -160,7 +160,7 @@ export default function About() {
               </span>
             </div>
 
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-8 leading-[1.1]">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-light mb-8 leading-[1.1]">
               <span className="block text-gradient">Jewelry with a Soul.</span>
               <span className="block text-cream mt-2">Where Desire Meets</span>
               <span className="block text-gradient mt-2">Creation</span>
@@ -209,7 +209,7 @@ export default function About() {
                       <value.icon className="w-6 h-6 text-gold" />
                     </motion.div>
                     <div>
-                      <h4 className="text-lg font-serif font-semibold text-cream mb-2 group-hover:text-gold transition-colors duration-300">
+                      <h4 className="text-lg font-serif font-normal text-cream mb-2 group-hover:text-gold transition-colors duration-300">
                         {value.title}
                       </h4>
                       <p className="text-cream/60 text-sm font-sans leading-relaxed">
@@ -233,7 +233,7 @@ export default function About() {
                 href="#koleksi"
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-dark font-semibold rounded-full hover:bg-gold-light transition-all duration-300 luxury-glow"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-dark font-normal rounded-full hover:bg-gold-light transition-all duration-300 luxury-glow"
               >
                 <span>Lihat Cerita Kami</span>
                 <motion.div

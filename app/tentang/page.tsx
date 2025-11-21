@@ -89,14 +89,14 @@ export default function TentangPage() {
                 }}
               />
               {/* Inner emblem */}
-              <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-gold/20 via-gold/5 to-transparent border border-gold/40 backdrop-blur-sm flex items-center justify-center">
-                <motion.div
+              <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-gold/20 via-gold/5 to-transparent border border-gold/40 backdrop-blur-sm flex items-center justify-center overflow-hidden">
+                <motion.img
+                  src="/logo.png"
+                  alt="Dahayu Logo"
                   animate={{ rotate: [0, 10, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="text-gold text-4xl font-serif font-bold"
-                >
-                  D
-                </motion.div>
+                  className="w-20 h-20 object-contain"
+                />
               </div>
               {/* Decorative corners */}
               <div className="absolute -top-2 -left-2 w-3 h-3 border-t-2 border-l-2 border-gold/60" />
@@ -130,7 +130,7 @@ export default function TentangPage() {
               />
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl font-serif font-light mb-6">
               <span className="text-gradient">Tentang Dahayu</span>
             </h1>
             <p className="text-cream/70 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
@@ -182,7 +182,7 @@ export default function TentangPage() {
                 <motion.img
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.7 }}
-                  src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80&auto=format&fit=crop"
+                  src="/anniv.jpg"
                   alt="Handcrafted Gold Jewelry"
                   className="w-full h-[600px] object-cover"
                 />
@@ -209,10 +209,8 @@ export default function TentangPage() {
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -bottom-10 -right-10 bg-gold p-8 rounded-2xl shadow-2xl max-w-xs luxury-glow"
               >
-                <div className="text-dark text-4xl font-bold mb-2">27+</div>
-                <div className="text-dark/80 font-medium">
-                  Tahun Pengalaman (sejak 1998)
-                </div>
+                <div className="text-dark text-4xl font-light mb-2">5+</div>
+                <div className="text-dark/80 font-medium">Tahun Pengalaman</div>
               </motion.div>
             </motion.div>
 
@@ -238,7 +236,7 @@ export default function TentangPage() {
                 <div className="h-px flex-1 bg-gradient-to-r from-gold/40 to-transparent" />
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient relative">
+              <h2 className="text-4xl md:text-5xl font-serif font-light text-gradient relative">
                 Cerita Kami
                 {/* Decorative accent */}
                 <motion.div
@@ -250,28 +248,26 @@ export default function TentangPage() {
 
               <div className="space-y-4 text-cream/70 text-lg leading-relaxed">
                 <p>
-                  Dahayu Jewelry lahir dari mimpi dan tekad tiga ibu rumah
-                  tangga luar biasa yang memiliki visi yang sama: menghadirkan
-                  keindahan perhiasan emas Bali yang otentik ke seluruh dunia.
-                  Dimulai dari ruang tamu kecil di Seminyak pada tahun 1998,
-                  kami bertiga—Ibu Wayan, Ibu Made, dan Ibu Ketut—bersatu dengan
-                  modal awal kepercayaan dan keahlian warisan keluarga dalam
-                  mengolah emas.
+                  Dahayu lahir dari keyakinan bahwa setiap perempuan memiliki
+                  energi yang tak tergantikan kekuatan lembut yang tumbuh dari
+                  keinginan untuk mengenal dan mencintai diri sendiri. Melalui
+                  perhiasan, kami merayakan perjalanan itu.
                 </p>
                 <p>
-                  Sebagai ibu rumah tangga, kami memahami nilai sebenarnya dari
-                  perhiasan: bukan hanya tentang kemewahan, tetapi tentang
-                  kenangan, warisan, dan cinta yang abadi. Setiap perhiasan yang
-                  kami ciptakan adalah hasil dari perpaduan sempurna antara
-                  teknik tradisional Bali yang telah diwariskan turun-temurun
-                  dengan sentuhan desain kontemporer yang elegan.
+                  Setiap karya Dahayu bukan sekadar hiasan, melainkan penanda
+                  momen ketika perempuan berani kembali pada dirinya pada
+                  keindahan yang alami, tenang, dan penuh makna.
                 </p>
                 <p>
-                  Perjalanan kami tidak selalu mudah. Dari mengerjakan satu
-                  perhiasan per minggu, hingga kini melayani ribuan pelanggan
-                  dari berbagai belahan dunia, kami tetap memegang teguh prinsip
-                  bahwa setiap karya harus dibuat dengan cinta, kesabaran, dan
-                  dedikasi penuh—seperti kami merawat keluarga kami sendiri.
+                  Dibentuk oleh tangan pengrajin yang mengerti bahasa detail,
+                  Dahayu menghadirkan karya yang menyatukan keinginan,
+                  keindahan, dan makna kehidupan. Sebuah pertemuan antara seni,
+                  energi, dan keindahan batin perempuan modern.
+                </p>
+                <p className="italic text-gold/80">
+                  Dahayu Jewelry — Jewelry with a Soul.
+                  <br />
+                  Where Desire Meets Creation.
                 </p>
               </div>
 
@@ -281,8 +277,8 @@ export default function TentangPage() {
                   whileHover={{ scale: 1.1, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="text-3xl font-bold text-gold mb-1">1000+</div>
-                  <div className="text-cream/60 text-sm">Pelanggan Puas</div>
+                  <div className="text-3xl font-light text-gold mb-1">925</div>
+                  <div className="text-cream/60 text-sm">Perak Sterling</div>
                 </motion.div>
                 <div className="w-px bg-gold/20" />
                 <motion.div
@@ -290,17 +286,10 @@ export default function TentangPage() {
                   whileHover={{ scale: 1.1, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="text-3xl font-bold text-gold mb-1">500+</div>
-                  <div className="text-cream/60 text-sm">Desain Eksklusif</div>
-                </motion.div>
-                <div className="w-px bg-gold/20" />
-                <motion.div
-                  className="text-center"
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="text-3xl font-bold text-gold mb-1">100%</div>
-                  <div className="text-cream/60 text-sm">Emas Asli</div>
+                  <div className="text-3xl font-light text-gold mb-1">
+                    Emas 18K
+                  </div>
+                  <div className="text-cream/60 text-sm">Kualitas Premium</div>
                 </motion.div>
               </div>
             </motion.div>
@@ -352,7 +341,7 @@ export default function TentangPage() {
               </motion.div>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-gradient mb-6">
               Filosofi Dahayu
             </h2>
             <p className="text-cream/70 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -375,11 +364,11 @@ export default function TentangPage() {
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <span className="text-4xl font-serif font-bold text-gold">
+                  <span className="text-4xl font-serif font-light text-gold">
                     1
                   </span>
                 </motion.div>
-                <h3 className="text-2xl font-serif font-bold text-cream mb-4 text-center">
+                <h3 className="text-2xl font-serif font-light text-cream mb-4 text-center">
                   Keindahan yang Berasal dari Ketulusan
                 </h3>
                 <p className="text-cream/70 leading-relaxed text-center">
@@ -407,11 +396,11 @@ export default function TentangPage() {
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <span className="text-4xl font-serif font-bold text-gold">
+                  <span className="text-4xl font-serif font-light text-gold">
                     2
                   </span>
                 </motion.div>
-                <h3 className="text-2xl font-serif font-bold text-cream mb-4 text-center">
+                <h3 className="text-2xl font-serif font-light text-cream mb-4 text-center">
                   Cinta yang Menghidupkan Karya
                 </h3>
                 <p className="text-cream/70 leading-relaxed text-center">
@@ -439,11 +428,11 @@ export default function TentangPage() {
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <span className="text-4xl font-serif font-bold text-gold">
+                  <span className="text-4xl font-serif font-light text-gold">
                     3
                   </span>
                 </motion.div>
-                <h3 className="text-2xl font-serif font-bold text-cream mb-4 text-center">
+                <h3 className="text-2xl font-serif font-light text-cream mb-4 text-center">
                   Warisan Makna, Bukan Sekadar Benda
                 </h3>
                 <p className="text-cream/70 leading-relaxed text-center">
@@ -495,7 +484,7 @@ export default function TentangPage() {
                   berharga yang kami jaga.
                 </p>
                 <div className="text-center">
-                  <div className="text-gold font-semibold text-lg mb-1">
+                  <div className="text-gold font-normal text-lg mb-1">
                     Ibu Wayan, Ibu Made & Ibu Ketut
                   </div>
                   <div className="text-cream/60">Pendiri Dahayu Jewelry</div>
@@ -551,7 +540,7 @@ export default function TentangPage() {
               <div className="text-gold text-5xl">✦</div>
             </motion.div>
 
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-gradient mb-6">
               Nilai-Nilai Kami
             </h2>
             <p className="text-cream/70 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -601,7 +590,7 @@ export default function TentangPage() {
                 >
                   <value.icon className="w-12 h-12 text-gold mb-4" />
                 </motion.div>
-                <h3 className="text-xl font-serif font-bold text-cream mb-3">
+                <h3 className="text-xl font-serif font-light text-cream mb-3">
                   {value.title}
                 </h3>
                 <p className="text-cream/70 leading-relaxed">
@@ -622,7 +611,7 @@ export default function TentangPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-gradient mb-6">
               Proses Pembuatan
             </h2>
             <p className="text-cream/70 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -637,24 +626,21 @@ export default function TentangPage() {
                 title: "Desain & Konsep",
                 description:
                   "Setiap perhiasan Dahayu berawal dari intuisi dan filosofi. Kami menggambar setiap lekuk dengan penuh kesadaran, terinspirasi oleh bentuk-bentuk alam yang melambangkan kekuatan dan kelembutan. Bukan sekadar desain, tetapi ungkapan rasa dan keindahan yang hidup dalam setiap detail.",
-                image:
-                  "https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&q=80&auto=format&fit=crop",
+                image: "/proses-pembuatan/1.JPG",
               },
               {
                 step: "02",
                 title: "Pengerjaan oleh Pengrajin Ahli",
                 description:
                   "Dari sketsa menjadi wujud nyata, setiap detail dibentuk oleh tangan pengrajin berpengalaman. Mereka bekerja dengan ketenangan dan presisi, memadukan teknik tradisional dan sentuhan modern. Dalam setiap pukulan kecil, tersimpan rasa hormat terhadap alam dan nilai luhur warisan budaya.",
-                image:
-                  "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80&auto=format&fit=crop",
+                image: "/proses-pembuatan/2.jpg",
               },
               {
                 step: "03",
                 title: "Penyempurnaan Akhir",
                 description:
                   "Tahap terakhir adalah perwujudan dari ketelitian dan cinta terhadap hasil terbaik. Setiap karya melalui proses finishing dan quality control yang cermat, hingga tercipta perhiasan yang halus, nyaman dikenakan, dan memancarkan keanggunan alami dari setiap sisi.",
-                image:
-                  "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80&auto=format&fit=crop",
+                image: "/proses-pembuatan/3.jpg",
               },
             ].map((process, index) => (
               <motion.div
@@ -681,13 +667,13 @@ export default function TentangPage() {
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <span className="text-dark text-xl font-bold">
+                    <span className="text-dark text-xl font-light">
                       {process.step}
                     </span>
                   </motion.div>
                 </div>
 
-                <h3 className="text-2xl font-serif font-bold text-cream mb-3">
+                <h3 className="text-2xl font-serif font-light text-cream mb-3">
                   {process.title}
                 </h3>
                 <p className="text-cream/70 leading-relaxed">
@@ -740,7 +726,7 @@ export default function TentangPage() {
               <div className="w-24 h-px bg-gradient-to-l from-transparent to-gold" />
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-6">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-gradient mb-6">
               Mengapa Memilih Dahayu
             </h2>
             <p className="text-cream/70 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -786,7 +772,7 @@ export default function TentangPage() {
                 >
                   <reason.icon className="w-10 h-10 text-gold" />
                 </motion.div>
-                <h3 className="text-xl font-serif font-bold text-cream mb-3">
+                <h3 className="text-xl font-serif font-light text-cream mb-3">
                   {reason.title}
                 </h3>
                 <p className="text-cream/70">{reason.description}</p>

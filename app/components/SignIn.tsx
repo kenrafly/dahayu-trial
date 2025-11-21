@@ -133,7 +133,7 @@ export default function SignIn({ isOpen, onClose }: SignInProps) {
                   }}
                   className="w-3 h-3 bg-gold transform rotate-45 mx-auto mb-4"
                 />
-                <h2 className="text-3xl font-serif font-bold text-gradient mb-2">
+                <h2 className="text-3xl font-serif font-light text-gradient mb-2">
                   {isSignUp ? "Buat Akun" : "Masuk"}
                 </h2>
                 <p className="text-cream/60 text-sm">
@@ -211,7 +211,7 @@ export default function SignIn({ isOpen, onClose }: SignInProps) {
                   disabled={loading}
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gold hover:bg-gold-light text-dark font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-lg shadow-gold/30 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gold hover:bg-gold-light text-dark font-normal py-3 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-lg shadow-gold/30 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <LogIn className="w-5 h-5" />
                   {loading ? "Memproses..." : isSignUp ? "Daftar" : "Masuk"}
@@ -231,7 +231,7 @@ export default function SignIn({ isOpen, onClose }: SignInProps) {
                 disabled={loading}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-dark border border-gold/20 hover:border-gold/40 text-cream font-semibold py-3 rounded-xl flex items-center justify-center gap-3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-dark border border-gold/20 hover:border-gold/40 text-cream font-normal py-3 rounded-xl flex items-center justify-center gap-3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path
@@ -266,12 +266,12 @@ export default function SignIn({ isOpen, onClose }: SignInProps) {
                   {isSignUp ? (
                     <>
                       Sudah punya akun?{" "}
-                      <span className="text-gold font-semibold">Masuk</span>
+                      <span className="text-gold font-normal">Masuk</span>
                     </>
                   ) : (
                     <>
                       Belum punya akun?{" "}
-                      <span className="text-gold font-semibold">Daftar</span>
+                      <span className="text-gold font-normal">Daftar</span>
                     </>
                   )}
                 </button>

@@ -37,17 +37,17 @@ const portableTextComponents = {
   },
   block: {
     h1: ({ children }: any) => (
-      <h1 className="text-4xl font-serif font-bold text-cream mb-6 mt-8">
+      <h1 className="text-4xl font-serif font-light text-cream mb-6 mt-8">
         {children}
       </h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className="text-3xl font-serif font-bold text-cream mb-4 mt-6">
+      <h2 className="text-3xl font-serif font-light text-cream mb-4 mt-6">
         {children}
       </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-2xl font-serif font-bold text-cream mb-3 mt-5">
+      <h3 className="text-2xl font-serif font-light text-cream mb-3 mt-5">
         {children}
       </h3>
     ),
@@ -99,7 +99,7 @@ export default function BlogPostPage() {
     return (
       <main className="min-h-screen bg-dark flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-3xl font-serif font-bold text-cream mb-4">
+          <h1 className="text-3xl font-serif font-light text-cream mb-4">
             Artikel tidak ditemukan
           </h1>
           <Link
@@ -145,7 +145,7 @@ export default function BlogPostPage() {
             transition={{ duration: 0.8 }}
             className="mb-12"
           >
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-gradient mb-6">
+            <h1 className="text-4xl md:text-6xl font-serif font-light text-gradient mb-6">
               {post.title}
             </h1>
 

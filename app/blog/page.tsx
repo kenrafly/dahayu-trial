@@ -71,7 +71,7 @@ export default function BlogPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl font-serif font-light mb-6">
               <span className="text-gradient">Blog</span>
             </h1>
             <p className="text-cream/70 text-lg md:text-xl max-w-3xl mx-auto">
@@ -140,7 +140,7 @@ export default function BlogPage() {
                         </div>
 
                         {/* Title */}
-                        <h2 className="text-xl font-serif font-bold text-cream mb-3 group-hover:text-gold transition-colors line-clamp-2">
+                        <h2 className="text-xl font-serif font-light text-cream mb-3 group-hover:text-gold transition-colors line-clamp-2">
                           {post.title}
                         </h2>
 
@@ -152,7 +152,7 @@ export default function BlogPage() {
                         )}
 
                         {/* Read More */}
-                        <div className="flex items-center gap-2 text-gold text-sm font-semibold group-hover:gap-3 transition-all">
+                        <div className="flex items-center gap-2 text-gold text-sm font-normal group-hover:gap-3 transition-all">
                           <span>Baca Selengkapnya</span>
                           <ArrowRight className="w-4 h-4" />
                         </div>

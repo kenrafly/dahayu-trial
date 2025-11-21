@@ -166,14 +166,14 @@ export default function ProductDetailPage() {
                 <span className="inline-block px-4 py-2 bg-gold/10 border border-gold/30 rounded-full text-gold text-sm mb-4">
                   {product.category}
                 </span>
-                <h1 className="text-4xl md:text-5xl font-serif font-bold text-gradient mb-4">
+                <h1 className="text-4xl md:text-5xl font-serif font-light text-gradient mb-4">
                   {product.name}
                 </h1>
               </div>
 
               {/* Deskripsi */}
               <div className="bg-dark-lighter p-6 rounded-2xl border border-gold/10">
-                <h3 className="text-lg font-serif font-bold text-gold mb-3">
+                <h3 className="text-lg font-serif font-light text-gold mb-3">
                   Deskripsi
                 </h3>
                 <p className="text-cream/80 leading-relaxed">
@@ -183,10 +183,10 @@ export default function ProductDetailPage() {
 
               {/* Harga */}
               <div className="bg-linear-to-br from-gold/10 to-transparent p-6 rounded-2xl border border-gold/20">
-                <h3 className="text-lg font-serif font-bold text-cream mb-2">
+                <h3 className="text-lg font-serif font-light text-cream mb-2">
                   Harga
                 </h3>
-                <div className="text-3xl font-bold text-gold mb-2">
+                <div className="text-3xl font-light text-gold mb-2">
                   {product.price}
                 </div>
                 <p className="text-cream/60 text-sm">
@@ -196,26 +196,26 @@ export default function ProductDetailPage() {
 
               {/* Spesifikasi */}
               <div className="bg-dark-lighter p-6 rounded-2xl border border-gold/10">
-                <h3 className="text-lg font-serif font-bold text-gold mb-4">
+                <h3 className="text-lg font-serif font-light text-gold mb-4">
                   Spesifikasi
                 </h3>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center py-3 border-b border-gold/10">
                     <span className="text-cream/60">Material</span>
-                    <span className="text-cream font-semibold text-right">
+                    <span className="text-cream font-normal text-right">
                       {product.material}
                     </span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-gold/10">
                     <span className="text-cream/60">Berat</span>
-                    <span className="text-cream font-semibold">
+                    <span className="text-cream font-normal">
                       {product.weight}
                     </span>
                   </div>
                   {product.dimensions && (
                     <div className="flex justify-between items-center py-3">
                       <span className="text-cream/60">Dimensi</span>
-                      <span className="text-cream font-semibold">
+                      <span className="text-cream font-normal">
                         {product.dimensions}
                       </span>
                     </div>
@@ -225,7 +225,7 @@ export default function ProductDetailPage() {
 
               {/* Keunggulan */}
               <div className="bg-linear-to-br from-gold/5 to-transparent p-6 rounded-2xl border border-gold/10">
-                <h3 className="text-lg font-serif font-bold text-gold mb-4">
+                <h3 className="text-lg font-serif font-light text-gold mb-4">
                   Keunggulan Produk
                 </h3>
                 <ul className="space-y-3">
@@ -254,7 +254,7 @@ export default function ProductDetailPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handleWhatsAppOrder}
-                  className="flex-1 bg-gold text-dark px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-3 hover:bg-gold-light transition-colors shadow-lg shadow-gold/20"
+                  className="flex-1 bg-gold text-dark px-8 py-4 rounded-full font-normal text-lg flex items-center justify-center gap-3 hover:bg-gold-light transition-colors shadow-lg shadow-gold/20"
                 >
                   <ShoppingBag className="w-6 h-6" />
                   Beli via WhatsApp
@@ -281,7 +281,7 @@ export default function ProductDetailPage() {
             >
               {/* Cerita Produk */}
               <div className="lg:col-span-2 bg-linear-to-br from-gold/10 via-gold/5 to-transparent p-8 rounded-2xl border border-gold/20">
-                <h3 className="text-2xl font-serif font-bold text-gold mb-4 flex items-center gap-3">
+                <h3 className="text-2xl font-serif font-light text-gold mb-4 flex items-center gap-3">
                   <div className="w-2 h-8 bg-gold rounded-full"></div>
                   Cerita Produk
                 </h3>
@@ -311,7 +311,7 @@ export default function ProductDetailPage() {
                 "✨ Pengalaman yang Dirasakan Pemakai"
               ) && (
                 <div className="bg-dark-lighter p-8 rounded-2xl border border-gold/20">
-                  <h3 className="text-xl font-serif font-bold text-gold mb-4">
+                  <h3 className="text-xl font-serif font-light text-gold mb-4">
                     ✨ Pengalaman Pemakai
                   </h3>
                   <div className="space-y-3">
@@ -334,7 +334,7 @@ export default function ProductDetailPage() {
               {/* Mengapa Memilih Produk */}
               {product.story.includes("Mengapa Memilih") && (
                 <div className="lg:col-span-2 bg-linear-to-br from-gold/5 to-transparent p-8 rounded-2xl border border-gold/10">
-                  <h3 className="text-xl font-serif font-bold text-gold mb-4">
+                  <h3 className="text-xl font-serif font-light text-gold mb-4">
                     Mengapa Memilih {product.name}
                   </h3>
                   <p className="text-cream/80 leading-relaxed">
@@ -350,7 +350,7 @@ export default function ProductDetailPage() {
               {/* Perawatan & Garansi */}
               {product.story.includes("Perawatan & Garansi") && (
                 <div className="bg-dark-lighter p-8 rounded-2xl border border-gold/20">
-                  <h3 className="text-xl font-serif font-bold text-gold mb-4">
+                  <h3 className="text-xl font-serif font-light text-gold mb-4">
                     Perawatan & Garansi
                   </h3>
                   <p className="text-cream/80 leading-relaxed">
