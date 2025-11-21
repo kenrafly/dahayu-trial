@@ -41,7 +41,7 @@ export default function ProductDetailPage() {
       `Berat: ${product.weight}\n\n` +
       `Mohon informasi lebih lanjut.`;
 
-    const phoneNumber = "6281234567890"; // Replace with actual WhatsApp number
+    const phoneNumber = "6285723368060"; // WhatsApp number from contacts
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
